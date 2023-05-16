@@ -64,6 +64,12 @@
       "options": {
         "lintFilePatterns": ["apps/xueji/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "docker-build": {
+      "command": "docker build -f Dockerfile . -t xueji"
+    },
+    "analyze": {
+      "command": "cross-env ANALYZE=true nx build xueji"
     }
   },
   "tags": []

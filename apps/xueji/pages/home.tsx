@@ -1,4 +1,4 @@
-import styles from './index.module.scss'
+import styles from './home.module.scss'
 
 export function Index() {
   /*

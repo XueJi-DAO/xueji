@@ -77,19 +77,25 @@
 - [Nx](https://github.com/nrwl/nx) - 基于插件的单一代码库构建管理系统
 - [Next.js](https://nextjs.org/) - 开发框架，采用 App Router 模式
 - [Material UI](https://github.com/mui/material-ui) - 组件库
+- [Tailwindcss](https://github.com/tailwindlabs/tailwindcss) - 原子化 CSS 样式方案
 - [Typescript](https://github.com/Microsoft/TypeScript) - 基于 Javascript 的编程语言
 - [react-three-fiber](https://github.com/pmndrs/react-three-fiber) - Three.js 组件
 - [framer-motion](https://github.com/framer/motion) - 动画手势库
 - [Apollo Client](https://github.com/apollographql/apollo-client) - **GraphQL** 客户端
 - [@neo4j/graphql](https://github.com/neo4j/graphql) - 将 GraphQL 转换为 Cypher, 作为图数据库 **Neo4j** 查询执行层
 - [Recoil](https://github.com/facebookexperimental/Recoil) - 状态管理框架
-- 其他：cypress jest eslint commitlint prettier
+- [Next Auth](https://github.com/nextauthjs/next-auth) - Web 认证
+- 其他：cypress jest eslint commitlint prettier WebAssembly WebWorker
+
+## 目录说明
+
+TODO...
 
 ## 开发
 
 ```shell
 pnpm install   # 安装依赖
-nx serve xueji  # 启动开发环境
+nx serve xueji  # 启动开发环境, 注意需要全局安装: pnpm i nx -g
 nx graph    # 查看依赖关系
 ```
 

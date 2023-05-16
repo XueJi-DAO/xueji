@@ -16,9 +16,21 @@
         "name": "next"
       }
     ],
-    "types": ["jest", "node"]
+    "types": [
+      "jest",
+      "node"
+    ]
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "next-env.d.ts",
+    "next-auth.d.ts",
+    "environment.d.ts",
+    "../../apps/xueji/dist/.next/types/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "jest.config.ts",

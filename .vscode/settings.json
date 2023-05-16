@@ -1,9 +1,9 @@
 {
   "editor.tabSize": 2,
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
+  // "editor.formatOnSave": true,
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": true
+  // },
   "cSpell.words": [
     "apexcharts",
     "apisix",
@@ -44,7 +44,8 @@
     "threejs",
     "timegrid",
     "trpc",
-    "twojs"
+    "twojs",
+    "papayawhip"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib"
 }
