@@ -10,6 +10,11 @@
 
 https://ahooks.js.org/hooks/use-request/index
 
+## 注意事项
+
+- 不要直接将服务器组件导入客户端组件使用，将服务器组件作为参数传递给客户端组件
+- 为了防止客户端对服务器代码的意外使用，可以使用`import 'server-only'`产生一个构建时错误。
+
 ### 后端
 
 服务层：quarkus

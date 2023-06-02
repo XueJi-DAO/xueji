@@ -76,9 +76,19 @@ const Signin = (props: SignInServerPageParams) => {
               </button>
             </form>
             <hr />
+            <form method="post" action="/api/auth/callback/credentials">
+              <label>密码登录</label>
+              <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
+              <input name="email" type="email" placeholder="请输入邮箱" />
+              <input name="password" type="password" placeholder="请输入密码" />
+              <button type="submit" className={styles.primaryBtn}>
+                登录
+              </button>
+            </form>
+            <hr />
             {providers &&
               Object.values(providers).map((provider) => {
-                if (provider.name == 'Email') return null
+                if (provider.type == 'email' || provider.type == 'credentials') return null
                 else {
                   return (
                     <div key={provider.name} style={{ marginBottom: 0 }}>
@@ -100,7 +110,7 @@ const Signin = (props: SignInServerPageParams) => {
         </div>
       </div>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/login_pattern.svg" alt="Pattern Background" layout="fill" className={styles.styledPattern} />
+      <img src="/Artboard.svg" alt="Pattern Background" layout="fill" className={styles.styledPattern} />
     </div>
   )
 }

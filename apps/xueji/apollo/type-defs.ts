@@ -15,4 +15,30 @@ export default gql`
     born: Int
     movies: [Movie!]! @relationship(type: "ACTED_IN", direction: OUT)
   }
+
+  type User {
+    id: ID!
+    email: String!
+    createdAt: Int!
+  }
+
+  input SignUpInput {
+    email: String!
+    password: String!
+  }
+
+  type SignUpPayload {
+    user: User!
+  }
+
+  type Query {
+    info: String!
+    user(id: ID!): User!
+    users: [User]!
+    viewer: User
+  }
+
+  type Mutation {
+    signUp(input: SignUpInput!): SignUpPayload!
+  }
 `

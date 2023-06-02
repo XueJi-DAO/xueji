@@ -30,7 +30,7 @@
     "next-auth.d.ts",
     "environment.d.ts",
     "../../apps/xueji/dist/.next/types/**/*.ts"
-  ],
+, "../../tools/seed.ts"  ],
   "exclude": [
     "node_modules",
     "jest.config.ts",

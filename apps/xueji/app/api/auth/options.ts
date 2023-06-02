@@ -1,12 +1,16 @@
 import type { NextAuthOptions } from 'next-auth'
-import { Neo4jAdapter } from '@next-auth/neo4j-adapter'
+// import { Neo4jAdapter } from '@next-auth/neo4j-adapter'
 import EmailProvider from 'next-auth/providers/email'
 import nodemailer from 'nodemailer'
-import GithubProvider from 'next-auth/providers/github'
-import getDriver from '../../../lib/neo4j'
+import CredentialsProvider from 'next-auth/providers/credentials'
+import { PrismaAdapter } from '@next-auth/prisma-adapter'
+import { PrismaClient } from '@prisma/client'
+import { findUser, validatePassword } from '../../../lib/user'
 
-const driver = getDriver()
-const neo4jSession = driver.session()
+const prisma = new PrismaClient()
+// import getDriver from '../../../lib/neo4j'
+// const driver = getDriver()
+// const neo4jSession = driver.session()
 
 function html({ url, host, email }: Record<'url' | 'host' | 'email', string>) {
   // Insert invisible space into domains and email address to prevent both the
@@ -73,6 +77,24 @@ export const authOptions: NextAuthOptions = {
   },
   // https://next-auth.js.org/configuration/providers/oauth
   providers: [
+    CredentialsProvider({
+      name: '登录',
+      credentials: {
+        email: { label: '邮箱', type: 'email', placeholder: '输入邮箱' },
+        password: { label: '密码', type: 'password', placeholder: '输入密码' },
+      },
+      async authorize(credentials, req) {
+        const user = await findUser({ email: credentials?.email || '' })
+        if (user && (await validatePassword(user, credentials?.password))) {
+          // Any object returned will be saved in `user` property of the JWT
+          return user
+        } else {
+          // If you return null then an error will be displayed advising the user to check their details.
+          return null
+          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
+        }
+      },
+    }),
     EmailProvider({
       server: process.env.EMAIL_SERVER,
       from: process.env.EMAIL_FROM,
@@ -89,10 +111,10 @@ export const authOptions: NextAuthOptions = {
         })
       },
     }),
-    GithubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
-    }),
+    // GithubProvider({
+    //   clientId: process.env.GITHUB_ID,
+    //   clientSecret: process.env.GITHUB_SECRET,
+    // }),
   ],
   pages: {
     signIn: '/auth/signin', // 自定义登录页
@@ -120,7 +142,7 @@ export const authOptions: NextAuthOptions = {
     //   return session
     // }
   },
-  adapter: Neo4jAdapter(neo4jSession),
+  adapter: PrismaAdapter(prisma), // Neo4jAdapter(neo4jSession),
   theme: {
     colorScheme: 'auto', // "auto" | "dark" | "light"
     brandColor: '#3377dd', // Hex color code
