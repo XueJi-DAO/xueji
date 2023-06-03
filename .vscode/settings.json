@@ -1,9 +1,9 @@
 {
   "editor.tabSize": 2,
-  // "editor.formatOnSave": true,
-  // "editor.codeActionsOnSave": {
-  //   "source.fixAll.eslint": true
-  // },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "cSpell.words": [
     "apexcharts",
     "apisix",
@@ -25,16 +25,19 @@
     "hookform",
     "iconify",
     "impressjs",
+    "introspector",
     "languagedetector",
     "minipass",
     "nextauth",
     "nprogress",
     "openlayers",
+    "papayawhip",
     "PDCA",
     "popperjs",
     "prismjs",
     "reduxjs",
     "roboto",
+    "rustc",
     "signin",
     "signout",
     "slatejs",
@@ -44,8 +47,7 @@
     "threejs",
     "timegrid",
     "trpc",
-    "twojs",
-    "papayawhip"
+    "twojs"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib"
 }

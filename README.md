@@ -85,6 +85,7 @@
 - [@neo4j/graphql](https://github.com/neo4j/graphql) - 将 GraphQL 转换为 Cypher, 作为图数据库 **Neo4j** 查询执行层
 - [Recoil](https://github.com/facebookexperimental/Recoil) - 状态管理框架
 - [Next Auth](https://github.com/nextauthjs/next-auth) - Web 认证
+- [GraphQL Code Generator](https://the-guild.dev/graphql/codegen)- 基于 GraphQL Schema 生成代码的工具
 - 其他：cypress jest eslint commitlint prettier WebAssembly WebWorker
 
 ## 目录说明
