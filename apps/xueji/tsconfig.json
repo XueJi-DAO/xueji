@@ -27,10 +27,9 @@
     "**/*.js",
     "**/*.jsx",
     "next-env.d.ts",
-    "next-auth.d.ts",
-    "environment.d.ts",
-    "../../apps/xueji/dist/.next/types/**/*.ts"
-, "../../tools/seed.ts"  ],
+    "./types/**/*.ts",
+    "../../apps/xueji/dist/.next/types/**/*.ts",
+    "../../tools/seed.ts"],
   "exclude": [
     "node_modules",
     "jest.config.ts",
