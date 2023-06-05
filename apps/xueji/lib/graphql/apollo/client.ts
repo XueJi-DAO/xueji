@@ -1,21 +1,14 @@
 import { useMemo } from 'react'
 import { ApolloClient, InMemoryCache, NormalizedCacheObject, createHttpLink } from '@apollo/client'
-import { SchemaLink } from '@apollo/client/link/schema'
 import merge from 'deepmerge'
 
 let apolloClient: ApolloClient<NormalizedCacheObject>
 
 function createIsomorphLink() {
-  if (typeof window === 'undefined') {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const schema = require('./schema')
-    return new SchemaLink({ schema })
-  } else {
-    return createHttpLink({
-      uri: '/api/graphql',
-      credentials: 'same-origin',
-    })
-  }
+  return createHttpLink({
+    uri: process.env.NEXT_PUBLIC_XUEJI_SERVER_URL + '/graphql',
+    credentials: 'same-origin',
+  })
 }
 
 function createApolloClient() {

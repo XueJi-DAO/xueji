@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth/next'
-import { authOptions } from '../../../api/auth/options'
+import { authOptions } from '../../../api/auth/[...nextauth]/options'
 
 export default async function ServerSidePage() {
   const session = await getServerSession(authOptions)

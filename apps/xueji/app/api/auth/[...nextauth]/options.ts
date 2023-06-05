@@ -5,7 +5,7 @@ import nodemailer from 'nodemailer'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { PrismaClient } from '@prisma/client'
-import { findUser, validatePassword } from '../../../lib/user'
+import { findUser, validatePassword } from '../../../../lib/user'
 
 const prisma = new PrismaClient()
 // import getDriver from '../../../lib/neo4j'

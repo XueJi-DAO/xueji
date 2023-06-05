@@ -1,34 +1,9 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { gql, useMutation } from '@apollo/client'
-import FormField from '../../components/FormField'
-
-const SignUpMutation = gql`
-  mutation SignUpMutation($email: String!, $password: String!) {
-    signUp(input: { email: $email, password: $password }) {
-      user {
-        id
-      }
-    }
-  }
-`
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getErrorMessage(error: any) {
-  if (error.graphQLErrors) {
-    for (const graphQLError of error.graphQLErrors) {
-      if (graphQLError.extensions && graphQLError.extensions.code === 'BAD_USER_INPUT') {
-        return graphQLError.message
-      }
-    }
-  }
-  return error.message
-}
 
 function SignUp() {
-  const [signUp] = useMutation(SignUpMutation)
-  const [errorMsg, setErrorMsg] = useState()
+  const [errorMsg, setErrorMsg] = useState('')
   const router = useRouter()
 
   const [email, setEmail] = useState('')
@@ -37,29 +12,17 @@ function SignUp() {
   async function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault()
     // 1. 直接调 REST api 接口存数据库
-    // try {
-    //   const body = { name, email }
-    //   await fetch(`/api/user`, {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(body),
-    //   })
-    //   await Router.push('/')
-    // } catch (error) {
-    //   console.error(error)
-    // }
-    // 通过 graphql 接口
-    try {
-      await signUp({
-        variables: {
-          email,
-          password,
-        },
-      })
-
+    const body = { email, password }
+    const result = await fetch(`/api/auth/signup`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    })
+    console.log('===signup===', result)
+    if (result.ok) {
       router.push('/auth/signin')
-    } catch (error) {
-      setErrorMsg(getErrorMessage(error))
+    } else {
+      setErrorMsg('失败')
     }
   }
 

@@ -12,6 +12,14 @@ interface Movie {
   directors: Directors
 }
 
+interface Film {
+  title: string
+  director: string
+  releaseDate: string
+}
+
+export type Films = Partial<Film>[]
+
 export type Movies = Partial<Movie>[]
 
 export type Actors = Partial<Person>[]

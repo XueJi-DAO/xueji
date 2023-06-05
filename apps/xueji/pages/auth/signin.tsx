@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { useSession, signIn, getCsrfToken, getProviders } from 'next-auth/react'
 
 import { getServerSession } from 'next-auth/next'
-import { authOptions } from '../../app/api/auth/options'
+import { authOptions } from '../../app/api/auth/[...nextauth]/options'
 import Image from 'next/image'
 import styles from './signin.module.css'
 import type { InternalProvider, Theme } from 'next-auth/src/core/types'

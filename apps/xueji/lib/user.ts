@@ -13,14 +13,11 @@ export async function createUser({ email, password }) {
     hash,
     salt,
   }
-
-  // users.push(user)
   const result = await prisma.user.create({
     data: {
       ...user,
     } as Prisma.UserCreateInput,
   })
-  console.log('======', result)
   return result
 }
 

@@ -2,7 +2,7 @@
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { ApolloProvider } from '@apollo/client'
-import { useApollo } from '../apollo/client'
+import { useApollo } from '../lib/graphql/apollo/client'
 import theme from '../lib/theme'
 import { SessionProvider } from 'next-auth/react'
 import { RecoilRoot } from 'recoil'

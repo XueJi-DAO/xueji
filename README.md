@@ -82,7 +82,6 @@
 - [react-three-fiber](https://github.com/pmndrs/react-three-fiber) - Three.js 组件
 - [framer-motion](https://github.com/framer/motion) - 动画手势库
 - [Apollo Client](https://github.com/apollographql/apollo-client) - **GraphQL** 客户端
-- [@neo4j/graphql](https://github.com/neo4j/graphql) - 将 GraphQL 转换为 Cypher, 作为图数据库 **Neo4j** 查询执行层
 - [Recoil](https://github.com/facebookexperimental/Recoil) - 状态管理框架
 - [Next Auth](https://github.com/nextauthjs/next-auth) - Web 认证
 - [GraphQL Code Generator](https://the-guild.dev/graphql/codegen)- 基于 GraphQL Schema 生成代码的工具

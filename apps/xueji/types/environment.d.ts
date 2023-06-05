@@ -1,5 +1,7 @@
 declare namespace NodeJS {
   export interface ProcessEnv {
+    readonly NEXT_PUBLIC_XUEJI_SERVER_URL: string
+
     readonly ENV_VARIABLE: string
     readonly NEXT_PUBLIC_ENV_VARIABLE: string
 

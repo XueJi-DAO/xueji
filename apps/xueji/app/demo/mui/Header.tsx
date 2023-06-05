@@ -85,8 +85,8 @@ export default function Header() {
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link prefetch={false} href="/demo/movie">
-              GraphQL+Neo4j
+            <Link prefetch={false} href="/demo/film">
+              GraphQL
             </Link>
           </li>
           <li className={styles.navItem}>
