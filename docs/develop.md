@@ -4,7 +4,21 @@
 核心技术：增强学习、知识图谱、语义计算、抽取集成、知识表示、自然语言理解、物理引擎、情感分析、检索推荐、区块链、数据可视化、3D。
 迭代开发：启动、计划、任务看板、极限编程、持续集成部署，需求、设计、开发、测试、评审、交付、沟通会议。
 
+## 技术架构
+
+架构: 前端多插件的单核应用引擎 + 后台多智能体微服务 + 神经网络 + 知识图谱
+
+交互层(智能文档,数字人,DSL)
+接口层(Api,RPC,websocket,DSL)
+服务层(文档服务, 虚拟空间, 知识管理, 贡献积分, DAO 组织, 项目任务, GTD, 资源管理, 版本)
+引擎层(DSL,智能体, 语义计算, 知识图谱, 流程引擎, 即时通讯, 消息队列, 数据存储, 认证, 权限, 加密)
+数据层(组件, 文档, 数据, 图数据库+向量数据库, 开发库框架, 算法)
+
 ## 技术选型
+
+Reactjs,Nextjs,MUI,emotion,Ts,impressjs,markdown-it,slatejs,threejs,twojs,d3js,openlayers,apollo,apisix,neo4j,quarkus
+
+https://github.com/alibaba/yalantinglibs
 
 ### 前端
 
