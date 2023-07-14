@@ -14,9 +14,6 @@ const nextConfig = {
   images: {
     domains: ['images.xxx.com'],
   },
-  experimental: {
-    appDir: true,
-  },
   webpack: (config, { isServer, dev }) => {
     config.output.webassemblyModuleFilename =
       isServer && !dev ? '../static/wasm/[modulehash].wasm' : 'static/wasm/[modulehash].wasm'
