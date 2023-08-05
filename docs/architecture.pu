@@ -1,32 +1,56 @@
 @startuml 应用架构
 
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
+package "Web 端" {
+  folder "智能文档" {
+    [画板]
+    [语义组件]
+    [命令行] - DSL
+    [知识可视化]
+    [界面生成]
   }
-  frame "Foo" {
-    [Frame 4]
+  folder "智能助理" {
+    [生成]
+    [问答]
+  }
+  folder "虚拟空间" {
+    [知识地图]
+    [记忆宫殿]
+    [社区管理]
+    [开放知识]
+    [智能学习]
+  }
+  folder "自我管理" {
+    [GTD]
+    [数据统计]
   }
 }
 
+node "AI大模型" {
+  [大模型服务] --> 知识抽取问答界面知识内容生成
+  [LangChain] --> ChatGPT
+  [向量数据库]
+}
 
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
+cloud "后台服务" {
+  [文档引擎]
+  [知识管理]
+  [知识抽取]
+  [协同服务]
+}
+
+database "Neo4j" {
+  folder "核心" {
+    [语义图谱]
+    [概念图谱]
+    [常识图谱]
+    [开放图谱]
+    [专属图谱]
+    [文档存储]
+  }
+}
+
+[画板] --> [文档引擎]
+[生成] --> [大模型服务]
+[文档引擎] --> [文档存储]
 
 @enduml
