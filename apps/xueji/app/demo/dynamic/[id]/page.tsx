@@ -19,7 +19,7 @@ async function getProduct(id: string) {
   return { id, title: id }
 }
 
-// 示例：使用generateMetadata来生成动态元数据。params 是来自路由的参数
+// 示例：使用 generateMetadata 来生成动态元数据。params 是来自路由的参数
 export async function generateMetadata({ params }: ParamsType): Promise<Metadata> {
   const product = await getProduct(params.id)
   return { title: product.title }
@@ -47,7 +47,7 @@ export async function generateStaticParams() {
 // /shop?a=1&a=2	{ a: ['1', '2'] }
 
 export default async function Page({ params }: ParamsType) {
-  // Next.js会自动在generateMetadata、generateStaticParams、Layouts、Pages和 Server Components之间自动删除重复获取相同数据的请求。
+  // Next.js会自动在 generateMetadata, generateStaticParams, Layouts、Pages和 Server Components之间自动删除重复获取相同数据的请求。
   const product = await getProduct(params.id)
 
   // 示例：JSON-LD is a format for structured data that can be used by search engines to understand your content
