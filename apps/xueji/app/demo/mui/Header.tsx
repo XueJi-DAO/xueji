@@ -7,7 +7,7 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 import styles from './header.module.css'
 
 export default function Header() {
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() // 服务端组件中无法使用 useSession
   const loading = status === 'loading'
 
   return (

@@ -1,14 +1,17 @@
-// import { useSession } from 'next-auth/react' // 服务端组件中无法使用
 import { getServerSession } from 'next-auth/next'
 import { authOptions } from './api/auth/[...nextauth]/options'
 
+// async function getData(id: string) {
+//   const res = await fetch(`https://.../api/doc/${id}`);
+//   return res.json();
+// }
+
 export default async function Page() {
-  // const { data } = useSession() // 服务端组件中无法使用
   const session = await getServerSession(authOptions)
 
   return (
     <>
-      <h1>首页</h1>
+      <h1>入口</h1>
       {session && <pre>{JSON.stringify(session, null, 2)}</pre>}
     </>
   )

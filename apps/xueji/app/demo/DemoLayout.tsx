@@ -8,8 +8,8 @@ import Header from './mui/Header'
 // 示例：React Context
 export const DemoContext = createContext({ isDemo: false })
 
-// 提示：不能将服务器组件直接导入到客户端组件中
-// 可以将一个服务端组件作为子组件或属性传递给客户端组件。children 或 props
+// 提示：不能将服务端组件直接导入到客户端组件中
+// 将一个服务端组件作为子组件或属性传递给客户端组件。children 或 props
 const DemoLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname()
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

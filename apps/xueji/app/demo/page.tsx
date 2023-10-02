@@ -1,5 +1,5 @@
-// 内置约定：page.tsx 为路由 /demo 创建 UI 界面
-// 提示：App Router 模式下默认是服务端组件，onLoad, onReady 和 onError 不能在服务端组件中使用
+// 内置约定：page.tsx 为路由 /demo 创建界面
+// 提示：App Router 模式下页面默认是服务端组件，onLoad, onReady 和 onError 不能在服务端组件中使用
 
 import Image from 'next/image'
 import profilePic from '../../public/logo.png'
@@ -46,7 +46,7 @@ export default async function Page({
   // const theme = cookies().get('theme');
 
   // 注意：在服务端组件中获取数据, 将数据获取移到服务器上会带来更好的性能和用户体验。
-  // 虽然可以在客户端组件中获取数据，但建议在服务器组件中获取数据，除非有特定原因。
+  // 虽然可以在客户端组件中获取数据，但建议在服务端组件中获取数据，除非有特定原因。
   const stars = await getNextStar()
 
   // 示例：传递数据给客户端组件
@@ -61,7 +61,7 @@ export default async function Page({
 
       {/* 建议：为了提高应用程序的性能，尽可能将客户端组件移动到组件树的叶子位置。
         不要把整个布局做成一个客户端组件，而是把交互逻辑移到一个客户端组件(例如<SearchBar />)，
-        并把布局保持为一个服务器组件。这意味着不必将所有 Javascript 组件发送到客户端。 */}
+        并把布局保持为一个服务端组件。这意味着不必将所有 Javascript 组件发送到客户端。 */}
       <DemoPage />
       <div>
         <p>Next.js has {stars} ⭐️</p>
