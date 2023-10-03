@@ -17,7 +17,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
 
   // read the active route segment within that slot
   const loginSegments = useSelectedLayoutSegment()
-  console.log(loginSegments)
+  // console.log(loginSegments)
 
   return (
     <>
