@@ -3,6 +3,7 @@
 基础理论：人机交互、知识管理、知识工程、认知心理、人工智能、众包协作。  
 核心技术：增强学习、知识图谱、语义计算、抽取集成、知识表示、自然语言理解、物理引擎、情感分析、检索推荐、区块链、数据可视化、3D。
 迭代开发：启动、计划、任务看板、极限编程、持续集成部署，需求、设计、开发、测试、评审、交付、沟通会议。
+语义计算: 知识图谱（符号）-->语言模型 transformer（神经网络学习推理）-->语义向量表示<==> 语义模型（统一融合对齐）
 
 ## 技术架构
 
@@ -91,6 +92,7 @@ https://ai.baidu.com/ai-doc/UNIT/Lkipmh0tz 对话平台
 
 ``` md
 https://github.com/ianstormtaylor/slate
+https://github.com/ReactiveX/rxjs
 https://docs.omniverse.nvidia.com/index.html
 https://github.com/enisdenjo/graphql-ws
 https://github.com/ianstormtaylor/slate
