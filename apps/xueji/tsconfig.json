@@ -29,7 +29,9 @@
     "next-env.d.ts",
     "./types/**/*.ts",
     "../../apps/xueji/dist/.next/types/**/*.ts",
-    "../../tools/seed.ts"],
+    "../../tools/seed.ts",
+    ".next/types/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "jest.config.ts",

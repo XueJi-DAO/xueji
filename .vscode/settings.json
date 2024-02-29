@@ -2,11 +2,12 @@
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "cSpell.words": [
     "apexcharts",
     "apisix",
+    "autoprefixer",
     "cdylib",
     "chartjs",
     "clevision",
