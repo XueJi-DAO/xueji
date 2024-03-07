@@ -6,12 +6,8 @@ export default function ApiExamplePage() {
       <p>
         <em>登录后可看到返回内容.</em>
       </p>
-      <h2>通过 Session</h2>
       <p>/api/session</p>
       <iframe src="/api/session" />
-      <h2>通过 JWT</h2>
-      <p>/api/jwt</p>
-      <iframe src="/api/jwt" />
     </>
   )
 }

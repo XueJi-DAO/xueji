@@ -1,12 +1,14 @@
+'use client'
+
 import Image from 'next/image'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import Link from '../../app/demo/mui/Link'
+import Link from '../../demo/mui/Link'
 
 export default function VerifyRequestPage() {
   return (
-    <div className="bg-gray-100 flex flex-col justify-center items-center" style={{ height: '100vh' }}>
+    <div className="flex flex-col justify-center items-center" style={{ height: '100vh' }}>
       <div
         className="bg-white flex flex-col justify-center rounded-xl p-8 shadow-px shadow-xl"
         style={{ width: '360px', height: '400px' }}>

@@ -20,14 +20,14 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
   // console.log(loginSegments)
 
   return (
-    <>
+    <div className="flex flex-col justify-between w-full h-full min-h-screen">
       {globalStyles}
       <Header />
       <h2 className="bg-gray-800 text-white p-2 m-2 rounded-lg">pathname:{pathname}</h2>
       <nav>....页面内容 start....</nav>
       <DemoContext.Provider value={{ isDemo }}>{children}</DemoContext.Provider>
       <nav>....页面内容 end....</nav>
-    </>
+    </div>
   )
 }
 

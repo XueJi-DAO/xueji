@@ -3,6 +3,8 @@ import './globals.css'
 import type { Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Providers } from './providers'
+import { SessionProvider } from 'next-auth/react'
+import { auth } from '../lib/auth'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -20,12 +22,22 @@ export const viewport: Viewport = {
 }
 
 // Root layouts: shared across all pages in an application. Must contain html and body tags.
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const session = await auth()
+  if (session?.user) {
+    session.user = {
+      name: session.user.name,
+      email: session.user.email,
+      image: session.user.image,
+    }
+  }
   return (
     <html lang="zh-Hans-CN">
       <body className={inter.className}>
         {/* 服务端组件不支持 Provider, 使用客户端组件封装一下 */}
-        <Providers>{children}</Providers>
+        <SessionProvider session={session}>
+          <Providers>{children}</Providers>
+        </SessionProvider>
       </body>
     </html>
   )

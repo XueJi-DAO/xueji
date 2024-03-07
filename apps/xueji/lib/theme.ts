@@ -20,7 +20,7 @@ const theme = createTheme({
       main: '#9c27b0',
     },
     background: {
-      default: 'papayawhip', //'#e5e5e5',
+      default: '#cfc2ae', //'#e5e5e5',
     },
     divider: 'rgba(88,88,88,0.12)',
     text: {

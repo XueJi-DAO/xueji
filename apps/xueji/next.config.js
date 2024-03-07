@@ -12,7 +12,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['images.xxx.com'],
+    remotePatterns: [{ hostname: 'images.xxx.com' }],
   },
   webpack: (config, { isServer, dev }) => {
     config.output.webassemblyModuleFilename =

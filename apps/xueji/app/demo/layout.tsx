@@ -18,13 +18,15 @@ import DemoLayout from './DemoLayout'
 //   )
 // }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default async function Layout({ children }: { children: React.ReactNode }) {
   // const authHeader = headers().get('authorization');
   // const theme = cookies().get('theme');
 
   return (
-    <DemoLayout>
-      <div>{children}</div>
-    </DemoLayout>
+    <>
+      <DemoLayout>
+        <div>{children}</div>
+      </DemoLayout>
+    </>
   )
 }

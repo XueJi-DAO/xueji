@@ -1,5 +1,5 @@
-import { getServerSession } from 'next-auth/next'
-import { authOptions } from './api/auth/[...nextauth]/options'
+import { auth } from '../lib/auth'
+import SessionData from '../components/SessionData'
 import Image from 'next/image'
 
 // async function getData(id: string) {
@@ -10,13 +10,12 @@ import Image from 'next/image'
 // 首页
 
 export default async function Page() {
-  const session = await getServerSession(authOptions)
-
+  const session = await auth() // 服务组件获取登录状态
   return (
     <>
       <Image alt="" src="/images/1.jpg" height={60} width={60} className="object-cover aspect-square col-span-2" />
       <h1>学记助理</h1>
-      {session && <pre>{JSON.stringify(session, null, 2)}</pre>}
+      <SessionData session={session} />
     </>
   )
 }

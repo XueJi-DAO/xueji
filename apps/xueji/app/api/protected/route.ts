@@ -1,12 +1,14 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { getToken } from 'next-auth/jwt'
+import { NextResponse } from 'next/server'
+import { auth } from '../../../lib/auth'
 
-export async function GET(request: NextRequest) {
-  const token = await getToken({ req: request })
-  if (token) {
-    return NextResponse.json({ foo: JSON.stringify(token, null, 2) })
+// 示例：api 访问权限
+export const GET = auth((req) => {
+  if (req.auth) {
+    return NextResponse.json({ foo: JSON.stringify(req.auth, null, 2) })
   }
+
   return NextResponse.json({
     error: '登录后可访问该接口',
   })
-}
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+}) as any // TODO: Fix `auth()` return type

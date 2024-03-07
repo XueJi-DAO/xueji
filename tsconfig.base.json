@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@/*": ["apps/xueji/*"],
       "@xueji/engine": ["libs/engine/src/index.ts"],
       "@xueji/meta-ui": ["libs/meta-ui/src/index.ts"],
       "@xueji/meta-ui/server": ["libs/meta-ui/src/server.ts"],

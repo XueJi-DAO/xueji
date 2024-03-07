@@ -21,7 +21,7 @@ body {
   padding: 0 1rem;
   color: rgb(var(--foreground-rgb));
   margin: 0;
-  background: papayawhip; /*#ede0cf*/
+  background: #cfc2ae; /*#ede0cf*/
   min-height: 100%;
 }
 

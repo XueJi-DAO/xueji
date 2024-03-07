@@ -7,7 +7,7 @@ export const globalStyles = (
       html,
       body {
         margin: 0;
-        background: papayawhip;
+        background: #cfc2ae;
         min-height: 100%;
       }
     `}
