@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 'use client'
 import { useContext } from 'react'
-import { DemoContext } from '../DemoLayout'
+import { UIContext } from '@/lib/context'
 
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
@@ -13,8 +13,9 @@ import Copyright from './Copyright'
 import { Animated, Basic, bounce, Combined } from '../styles'
 
 const Page = () => {
-  const { isDemo } = useContext(DemoContext)
-  console.log(isDemo)
+  const { isDemo, setIsDemo } = useContext(UIContext)
+  console.log('=====useContext isDemo:', isDemo)
+  setIsDemo(true)
   return (
     <Container maxWidth="lg">
       <Box

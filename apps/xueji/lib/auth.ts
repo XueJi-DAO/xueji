@@ -157,7 +157,8 @@ export const config: NextAuthConfig = {
       if (account?.provider !== 'credentials') return true
       // const existingUser = await getUserById(user.id as string)
       // 验证邮箱后才可登录
-      if (!user?.emailVerified) return false
+      // if (!user?.emailVerified) return false
+      console.log('signIn')
       return true
     },
     async session({ token, session }) {

@@ -1,3 +1,5 @@
+export * from './models'
+
 interface Person {
   name: string
   born: number
