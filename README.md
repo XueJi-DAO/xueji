@@ -103,6 +103,7 @@ Notion, Coda, RoamResearch, Mathimatica, TheBrain, Tana, Obsidian, 印象笔记,
 - [Recoil](https://github.com/facebookexperimental/Recoil) - 状态管理框架
 - [Next Auth](https://github.com/nextauthjs/next-auth) - Web 认证
 - [GraphQL Code Generator](https://the-guild.dev/graphql/codegen)- 基于 GraphQL Schema 生成代码的工具
+- [icons-react](https://github.com/tabler/tabler-icons/tree/main/packages/icons-react)-Tabler Icons for React
 - 其他: cypress jest eslint commitlint prettier WebAssembly WebWorker
 
 ## 目录说明

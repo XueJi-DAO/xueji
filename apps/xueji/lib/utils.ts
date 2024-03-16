@@ -13,3 +13,12 @@ export const convertBlobToBase64 = async (blob: Blob): Promise<string> => {
     reader.readAsDataURL(blob)
   })
 }
+
+export function formatDate(input: string | number | Date): string {
+  const date = new Date(input)
+  return date.toLocaleDateString('zh-CN', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  })
+}

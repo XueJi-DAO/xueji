@@ -5,6 +5,7 @@ import Image from 'next/image'
 import profilePic from '../../public/logo.png'
 import DemoPage from './DemoPage'
 // import Counter from '../components/Counter'
+import { IconArrowLeft } from '@tabler/icons-react'
 
 // 特性：built-in SEO
 // define metadata (e.g. meta and link tags inside your HTML head element) with an explicit metadata configuration in any layout or page.
@@ -58,7 +59,8 @@ export default async function Page({
       <p className="m-2 text-3xl font-bold underline">示例页面</p>
       {/* 提示：内置组件, 大小优化、视觉稳定性、惰性加载、占位符 */}
       <Image alt="logo" width={100} height={100} src={profilePic} />
-
+      {/* Tabler Icons for React */}
+      <IconArrowLeft color="red" size={48} />
       {/* 建议：为了提高应用程序的性能，尽可能将客户端组件移动到组件树的叶子位置。
         不要把整个布局做成一个客户端组件，而是把交互逻辑移到一个客户端组件(例如<SearchBar />)，
         并把布局保持为一个服务端组件。这意味着不必将所有 Javascript 组件发送到客户端。 */}
