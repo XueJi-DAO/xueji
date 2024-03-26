@@ -126,6 +126,46 @@ body {
   min-height: 100%;
 }
 
+.blur {
+  -moz-filter: blur(15px);
+  -ms-filter: blur(15px);
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=15,MakeShadow=false);
+}
+.blur-layer {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  opacity: 0.2;
+}
+.img-cover {
+  max-width: 90% !important;
+  min-width: 72px !important;
+  max-height: 90% !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 6px;
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 /*
 html {
   -webkit-text-size-adjust: 100%;
