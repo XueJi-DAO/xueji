@@ -10,6 +10,7 @@ import './Sample.scss'
 
 import type { PDFDocumentProxy } from 'pdfjs-dist'
 
+// 注意 pdfjs-dist 版本：3.11.174
 pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.js', import.meta.url).toString()
 
 const options = {
