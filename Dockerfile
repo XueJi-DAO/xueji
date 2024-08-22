@@ -29,4 +29,4 @@ ENV NODE_ENV production
 
 EXPOSE 3000
 ENV PORT 3000
-CMD npx nx serve xueji --prod
+CMD npx nx start xueji --prod

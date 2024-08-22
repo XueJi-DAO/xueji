@@ -1,12 +1,11 @@
 {
-  "extends": ["plugin:@nx/react-typescript", "next", "next/core-web-vitals", "../../.eslintrc.json"],
+  "extends": [
+    "plugin:@nx/react-typescript",
+    "next",
+    "next/core-web-vitals",
+    "../../.eslintrc.json"
+  ],
   "ignorePatterns": ["!**/*", ".next/**/*", "lib/gql/*"],
-  "settings": {
-    "tailwindcss": {
-      "callees": ["cn", "cva"],
-      "config": "tailwind.config.js"
-    }
-  },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -21,6 +20,12 @@
     {
       "files": ["*.js", "*.jsx"],
       "rules": {}
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      }
     }
   ],
   "rules": {

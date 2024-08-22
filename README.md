@@ -92,14 +92,15 @@ Notion, Coda, RoamResearch, Mathimatica, TheBrain, Tana, Obsidian, 印象笔记,
 
 ## 前端技术
 
-- [Nx](https://github.com/nrwl/nx) - 基于插件的单一代码库构建管理系统
-- [Next.js](https://nextjs.org/) - 开发框架, 采用 App Router 模式
+- [Nx](https://github.com/nrwl/nx) - 基于插件的[单一代码库构建管理系统](./docs/nx.md)。
+- [Next.js](https://nextjs.org/) - 开发框架，采用 [App Router 模式](./docs/nextjs.md)
 - [Material UI](https://github.com/mui/material-ui) - 组件库
 - [Tailwindcss](https://github.com/tailwindlabs/tailwindcss) - 原子化 CSS 样式方案
 - [Typescript](https://github.com/Microsoft/TypeScript) - 基于 Javascript 的编程语言
 - [react-three-fiber](https://github.com/pmndrs/react-three-fiber) - Three.js 组件
 - [framer-motion](https://github.com/framer/motion) - 动画手势库
 - [Apollo Client](https://github.com/apollographql/apollo-client) - **GraphQL** 客户端
+- [@neo4j/graphql](https://github.com/neo4j/graphql) - 将 GraphQL 转换为 Cypher, 作为图数据库 **Neo4j** 查询执行层
 - [Recoil](https://github.com/facebookexperimental/Recoil) - 状态管理框架
 - [Next Auth](https://github.com/nextauthjs/next-auth) - Web 认证
 - [GraphQL Code Generator](https://the-guild.dev/graphql/codegen)- 基于 GraphQL Schema 生成代码的工具
@@ -114,8 +115,15 @@ TODO...
 
 ```shell
 pnpm install   # 安装依赖
-nx serve xueji  # 启动开发环境, 注意需要全局安装: pnpm i nx -g
+nx dev xueji  # 启动开发环境, 注意需要全局安装: pnpm i nx -g
 nx graph    # 查看依赖关系
+nx report #获取当前已安装的所有插件的列表
+```
+
+## 升级 Nx
+
+```sh
+nx migrate latest
 ```
 
 ## 部署
@@ -128,8 +136,22 @@ nx serve xueji --prod
 nx docker-build xueji
 ```
 
-## 升级 Nx
+## 持续集成 TODO
+
+### Step 1
+
+To connect to Nx Cloud, run the following command:
 
 ```sh
-nx migrate latest
+npx nx connect
 ```
+
+### Step 2
+
+Use the following command to configure a CI workflow for your workspace:
+
+```sh
+npx nx g ci-workflow
+```
+
+[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)

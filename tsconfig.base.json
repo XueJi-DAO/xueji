@@ -15,10 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["apps/xueji/*"],
+      "@/*": ["apps/xueji/src/*"],
       "@xueji/engine": ["libs/engine/src/index.ts"],
-      "@xueji/meta-ui": ["libs/meta-ui/src/index.ts"],
-      "@xueji/meta-ui/server": ["libs/meta-ui/src/server.ts"],
+      "@xueji/ui": ["libs/ui/src/index.ts"],
+      "@xueji/ui/server": ["libs/ui/src/server.ts"],
       "@xueji/utils": ["libs/utils/src/index.ts"]
     }
   },

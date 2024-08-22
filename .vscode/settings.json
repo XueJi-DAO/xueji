@@ -5,6 +5,7 @@
     "source.fixAll.eslint": "explicit"
   },
   "cSpell.words": [
+    "ahooks",
     "apexcharts",
     "apisix",
     "autoprefixer",
@@ -49,7 +50,17 @@
     "threejs",
     "timegrid",
     "trpc",
-    "twojs"
+    "twojs",
+    "xueji"
   ],
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  // 折叠显示
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "$(capture).test.ts, $(capture).test.tsx",
+    "*.tsx": "$(capture).test.ts, $(capture).test.tsx",
+    "*.env": "$(capture).env.*",
+    "package.json": "app.json,pnpm-lock.yaml,LICENSE,README*,CHANGELOG*,CNAME,.gitattributes,.eslintrc-auto-import.json,.gitignore,.prettierrc,stylelint.config.js,commitlint.config.js,.prettierignore,.eslintrc.json,.eslintignore,.editorconfig,code_of_conduct.md,.npmrc,.dockerignore,Dockerfile,jest.config.ts,jest.preset.js"
+  }
 }

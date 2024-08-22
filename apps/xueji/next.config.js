@@ -12,7 +12,14 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [{ hostname: 'images.xxx.com' }],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 's3.amazonaws.com',
+        port: '',
+        pathname: '/my-bucket/**',
+      },
+    ],
   },
   webpack: (config, { isServer, dev }) => {
     config.output.webassemblyModuleFilename =
@@ -31,20 +38,12 @@ const nextConfig = {
     return config
   },
   nx: {
+    // Set this to true if you would like to use SVGR
+    // See: https://github.com/gregberge/svgr
     svgr: false,
   },
-  // images: {
-  //   remotePatterns: [
-  //     {
-  //       protocol: 'https',
-  //       hostname: 's3.amazonaws.com',
-  //       port: '',
-  //       pathname: '/my-bucket/**',
-  //     },
-  //   ],
-  // },
-}
+};
 
-const plugins = [withNx, withBundleAnalyzer]
+const plugins = [withNx, withBundleAnalyzer];
 
-module.exports = composePlugins(...plugins)(nextConfig)
+module.exports = composePlugins(...plugins)(nextConfig);

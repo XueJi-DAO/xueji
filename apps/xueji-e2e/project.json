@@ -2,26 +2,8 @@
   "name": "xueji-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/xueji-e2e/src",
-  "projectType": "application",
-  "targets": {
-    "e2e": {
-      "executor": "@nx/cypress:cypress",
-      "options": {
-        "cypressConfig": "apps/xueji-e2e/cypress.config.ts",
-        "devServerTarget": "xueji:serve:development",
-        "testingType": "e2e"
-      },
-      "configurations": {
-        "production": {
-          "devServerTarget": "xueji:serve:production"
-        }
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"]
-    }
-  },
   "tags": [],
-  "implicitDependencies": ["xueji"]
+  "implicitDependencies": ["xueji"],
+  "// targets": "to see all targets run: nx show project xueji-e2e --web",
+  "targets": {}
 }
