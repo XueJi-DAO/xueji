@@ -47,7 +47,7 @@
 
 ### 智能、简捷、高效、精准、安全
 
-- **基于统一语义**：**语义计算**、化繁为简、融合不同领域学科、人与机器的知识。语义->概念->信息->知识->智能。
+- **基于统一语义**：**语义计算**、化繁为简、融合不同领域学科、人与机器的知识。语义->概念->信息->知识->智能。(metadata/linked-data/semantic-network/AI)
 - **链接知识与人**：互联数据，把知识链接成网络、加强人与知识的关联。
 - **一切皆文档：**基于语义组件、插件、智能模板，按需组合成你需要的应用，一个地方解决所有问题。
 - **多层次可视化**：多视图多层次与知识交互（纯文本、表格、导图、图表、日历、项目、VR、5W2H1E）
@@ -74,8 +74,8 @@
 
 ### 前端技术
 
-- [Nx](https://github.com/nrwl/nx) - 基于插件的单一代码库构建管理系统
-- [Next.js](https://nextjs.org/) - 开发框架，采用 App Router 模式
+- [Nx](https://github.com/nrwl/nx) - 基于插件的[单一代码库构建管理系统](./docs/nx.md)。
+- [Next.js](https://nextjs.org/) - 开发框架，采用 [App Router 模式](./docs/nextjs.md)
 - [Material UI](https://github.com/mui/material-ui) - 组件库
 - [Tailwindcss](https://github.com/tailwindlabs/tailwindcss) - 原子化 CSS 样式方案
 - [Typescript](https://github.com/Microsoft/TypeScript) - 基于 Javascript 的编程语言
@@ -94,9 +94,11 @@ TODO...
 ## 开发
 
 ```shell
+pnpm add --global nx@latest # 全局安装nx, 方便执行命令
 pnpm install   # 安装依赖
 nx serve xueji  # 启动开发环境, 注意需要全局安装: pnpm i nx -g
 nx graph    # 查看依赖关系
+nx report #获取当前已安装的所有插件的列表
 ```
 
 ## 部署

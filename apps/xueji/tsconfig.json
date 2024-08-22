@@ -29,7 +29,8 @@
     "next-env.d.ts",
     "next-auth.d.ts",
     "environment.d.ts",
-    "../../apps/xueji/dist/.next/types/**/*.ts"
+    "../../apps/xueji/dist/.next/types/**/*.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
