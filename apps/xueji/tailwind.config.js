@@ -5,7 +5,7 @@ const { join } = require('path')
 module.exports = {
   darkMode: ['class'],
   content: [
-    join(__dirname, '{app,src,pages,components}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
+    join(__dirname, '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
@@ -17,9 +17,10 @@ module.exports = {
       },
     },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      backgroundImage: { // bg-gradient-conic
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
         border: 'hsl(var(--border))',

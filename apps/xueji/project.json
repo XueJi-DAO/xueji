@@ -6,8 +6,17 @@
   "tags": [],
   "// targets": "to see all targets run: nx show project xueji --web",
   "targets": {
+    "generate": {
+      "command": "pnpm run generate"
+    },
+    "migrate": {
+      "command": "pnpm run migrate-deploy"
+    },
     "docker-build": {
       "command": "docker build -f Dockerfile . -t xueji"
+    },
+    "seed": {
+      "command": "pnpm run seed"
     },
     "analyze": {
       "command": "cross-env ANALYZE=true nx build xueji"

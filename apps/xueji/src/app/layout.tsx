@@ -13,7 +13,7 @@ const inter = Inter({
 // Config-based Metadata
 export const metadata = {
   title: '学记助理: 智能学习助理',
-  description: '精准 智能 高效 Get Things Done! 学习笔记 知识问答 知识可视化 AIGC 智能助理 知识图谱 记忆宫殿 元宇宙',
+  description: '知识地图 学习笔记 知识管理 知识可视化 知识问答 数字助理 虚拟空间, Get Things Done in one place!',
 }
 
 export const viewport: Viewport = {
@@ -35,9 +35,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="zh-Hans-CN">
       <body className={inter.className}>
         {/* 服务端组件不支持 Provider, 使用客户端组件封装一下 */}
-        <SessionProvider session={session}>
+        {/* <SessionProvider session={session}>
           <Providers>{children}</Providers>
-        </SessionProvider>
+        </SessionProvider> */}
+        {children}
       </body>
     </html>
   )

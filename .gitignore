@@ -7,6 +7,12 @@ tmp
 
 # dependencies
 node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
 
 # IDEs and editors
 /.idea
@@ -27,7 +33,6 @@ node_modules
 # misc
 /.sass-cache
 /connect.lock
-/coverage
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
@@ -41,7 +46,7 @@ Thumbs.db
 .nx/cache
 .nx/workspace-data
 
-# Next.js
-.next
-out
+# next.js
+.next/
+out/
 *.local

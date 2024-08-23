@@ -1,0 +1,173 @@
+@tailwind base; /* 与 mui 冲突 */
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html,
+body {
+  color: rgb(var(--foreground-rgb));
+  margin: 0;
+  /*background: #cfc2ae; #ede0cf #f7f7f7;*/
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  min-height: 100%;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #f2f2f2;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 0 0% 63.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 0 0% 14.9%;
+  }
+}
+
+/* @layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+} */
+
+.blur {
+  -moz-filter: blur(15px);
+  -ms-filter: blur(15px);
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=15,MakeShadow=false);
+}
+.blur-layer {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  opacity: 0.2;
+}
+.img-cover {
+  max-width: 90% !important;
+  min-width: 72px !important;
+  max-height: 90% !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 6px;
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
