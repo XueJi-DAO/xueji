@@ -61,6 +61,6 @@
     "*.ts": "$(capture).test.ts, $(capture).test.tsx",
     "*.tsx": "$(capture).test.ts, $(capture).test.tsx",
     "*.env": "$(capture).env.*",
-    "package.json": "app.json,pnpm-lock.yaml,LICENSE,README*,CHANGELOG*,CNAME,.gitattributes,.eslintrc-auto-import.json,.gitignore,.prettierrc,stylelint.config.js,commitlint.config.js,.prettierignore,.eslintrc.json,.eslintignore,.editorconfig,code_of_conduct.md,.npmrc,.dockerignore,Dockerfile,jest.config.ts,jest.preset.js"
+    "package.json": "app.json,pnpm-lock.yaml,LICENSE,CHANGELOG*,CNAME,.gitattributes,.eslintrc-auto-import.json,.gitignore,.prettierrc,stylelint.config.js,commitlint.config.js,.prettierignore,.eslintrc.json,.eslintignore,.editorconfig,code_of_conduct.md,.npmrc,.dockerignore,Dockerfile,jest.config.ts,jest.preset.js"
   }
 }
