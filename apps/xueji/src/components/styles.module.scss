@@ -1,0 +1,10 @@
+.inlineCode {
+  color: #be00ff;
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
+.inlineCode::before,
+.inlineCode::after {
+  content: "`";
+}
