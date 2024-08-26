@@ -19,12 +19,12 @@ const Index = () => {
   }, [])
 
   return (
-    <>
+    <div className="flex flex-col items-center">
       <p>Do work in a WebWorker!</p>
       <button className="p-2 text-3xl" onClick={handleWork}>
         点击计算 PI
       </button>
-    </>
+    </div>
   )
 }
 

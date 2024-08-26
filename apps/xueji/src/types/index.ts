@@ -27,3 +27,5 @@ export type Movies = Partial<Movie>[]
 export type Actors = Partial<Person>[]
 
 export type Directors = Partial<Person>[]
+
+export type { TypeA } from "./package-1";

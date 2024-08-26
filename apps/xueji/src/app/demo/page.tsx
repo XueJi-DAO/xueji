@@ -2,10 +2,15 @@
 // 提示：App Router 模式下页面默认是服务端组件，onLoad, onReady 和 onError 不能在服务端组件中使用
 
 import Image from 'next/image'
-import profilePic from '../../public/logo.png'
+import profilePic from '../../../public/logo.png'
 import DemoPage from './DemoPage'
 // import Counter from '../components/Counter'
 import { IconArrowLeft } from '@tabler/icons-react'
+import type { TypeA } from "@/types"
+
+const val: TypeA = {
+  name: "next",
+};
 
 // 特性：built-in SEO
 // define metadata (e.g. meta and link tags inside your HTML head element) with an explicit metadata configuration in any layout or page.
@@ -56,7 +61,7 @@ export default async function Page({
 
   return (
     <>
-      <p className="m-2 text-3xl font-bold underline">示例页面</p>
+      <p className="m-2 text-3xl font-bold underline">{val.name}示例页面</p>
       {/* 提示：内置组件, 大小优化、视觉稳定性、惰性加载、占位符 */}
       <Image alt="logo" width={100} height={100} src={profilePic} />
       {/* Tabler Icons for React */}
@@ -67,7 +72,7 @@ export default async function Page({
       <DemoPage />
       <div>
         <p>Next.js has {stars} ⭐️</p>
-        <div className="app">示例: 全局样式 globals.css</div>
+        <div className="app">示例: 使用全局样式 globals.css</div>
 
         {/* 示例：环境变量 */}
         <div>服务端环境变量（服务端组件及api中可用）：{process.env.ENV_VARIABLE}</div>
