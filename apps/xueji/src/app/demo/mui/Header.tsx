@@ -1,7 +1,9 @@
 'use client'
 
 import Link from './Link'
+import ActiveLink from '@/components/ActiveLink'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { useApolloClient } from '@apollo/client'
 // import { getServerSession } from "next-auth/next"
 // import { authOptions } from 'app/api/auth/options'
 import styles from './header.module.css'
@@ -9,12 +11,22 @@ import styles from './header.module.css'
 export default function Header() {
   const { data: session, status } = useSession() // 服务端组件中无法使用 useSession
   const loading = status === 'loading'
+  const client = useApolloClient()
 
   return (
     <header>
       <noscript>
         <style>{`.no-js-show { opacity: 1; top: 0; }`}</style>
       </noscript>
+      <style jsx global>{`
+        .nav-link {
+          text-decoration: none;
+        }
+
+        .active:after {
+          content: " (current page)";
+        }
+      `}</style>
       <div className={styles.signedInStatus}>
         <p className={`no-js-show ${!session && loading ? styles.loading : styles.loaded}`}>
           {!session && (
@@ -44,7 +56,9 @@ export default function Header() {
                 className={styles.button}
                 onClick={(e) => {
                   e.preventDefault()
-                  signOut()
+                  client.resetStore().then(() => {
+                      signOut()
+                  })
                 }}>
                 退出
               </a>
@@ -62,6 +76,16 @@ export default function Header() {
           <li className={styles.navItem}>
             <Link prefetch={false} href="/demo">
               示例
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <ActiveLink activeClassName="active" className="nav-link" href="/demo/tailwindcss">
+              tailwindcss示例
+            </ActiveLink>
+          </li>
+          <li className={styles.navItem}>
+            <Link prefetch={false} href="/demo/wasm">
+              Webassembly
             </Link>
           </li>
           <li className={styles.navItem}>

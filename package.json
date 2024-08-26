@@ -18,7 +18,9 @@
     "seed": "dotenv -e .env.local ts-node tools/seed.ts",
     "gen-schema": "ts-node tools/neo4j",
     "prepare": "husky",
-    "build-rust": "rustc --target wasm32-unknown-unknown -O --crate-type=cdylib apps/xueji/wasm/add.rs -o apps/xueji/public/add.wasm"
+    "build-rust": "rustc --target wasm32-unknown-unknown -O --crate-type=cdylib apps/xueji/wasm/add.rs -o apps/xueji/public/add.wasm",
+    "analyze": "cross-env ANALYZE=true nx build xueji",
+    "serve": "serve .next/analyze"
   },
   "private": true,
   "dependencies": {

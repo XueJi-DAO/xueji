@@ -6,7 +6,7 @@
 
 import useSWR from 'swr'
 import { fetcher } from '@xueji/utils'
-import { MetaUi } from '@xueji/meta-ui'
+import { MetaUi } from '@xueji/ui'
 
 // 特性：Routing Hooks
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'

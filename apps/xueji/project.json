@@ -17,9 +17,6 @@
     },
     "seed": {
       "command": "pnpm run seed"
-    },
-    "analyze": {
-      "command": "cross-env ANALYZE=true nx build xueji"
     }
   }
 }

@@ -13,10 +13,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <RecoilRoot>
       <ApolloProvider client={apolloClient}>
-        <ThemeProvider theme={theme}>
+        {/* <ThemeProvider theme={theme}>
           <CssBaseline />
           <CacheProvider>{children}</CacheProvider>
-        </ThemeProvider>
+        </ThemeProvider> */}
+        {children}
       </ApolloProvider>
     </RecoilRoot>
   )
