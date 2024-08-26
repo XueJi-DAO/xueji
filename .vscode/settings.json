@@ -35,6 +35,7 @@
     "minipass",
     "nextauth",
     "nprogress",
+    "ollama",
     "openlayers",
     "papayawhip",
     "PDCA",
@@ -55,6 +56,7 @@
     "timegrid",
     "trpc",
     "twojs",
+    "webui",
     "xueji"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib",
