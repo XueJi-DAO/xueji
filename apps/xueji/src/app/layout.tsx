@@ -25,6 +25,8 @@ export const viewport: Viewport = {
 // Root layouts: shared across all pages in an application. Must contain html and body tags.
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const session = await auth()
+  // TODO: Look into https://react.dev/reference/react/experimental_taintObjectReference
+  // filter out sensitive data before passing to client.
   if (session?.user) {
     session.user = {
       name: session.user.name,

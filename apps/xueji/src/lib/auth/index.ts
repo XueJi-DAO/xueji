@@ -1,15 +1,19 @@
 import 'server-only' // 防止这种客户端对服务器代码的意外使用，
-import type { NextAuthConfig } from 'next-auth'
 import NextAuth from 'next-auth'
+import { ZodError } from "zod"
+import { SignInSchema } from "@xueji/utils"
 import { findUser, validatePassword } from './user'
-import { authorized, signin, session, jwt } from './auth'
+import { authConfig } from "./config"
 import { adapter } from './adapter'
 
 import { emailProvider } from './email-provider'
 import Credentials from "next-auth/providers/credentials"
 import GitHub from 'next-auth/providers/github'
 
-export const config: NextAuthConfig = {
+export const { handlers, auth, signIn, signOut } = NextAuth({
+  adapter: adapter,
+  debug: process.env.NODE_ENV !== "production" ? true : false,
+  ...authConfig,
   providers: [
     GitHub,
     Credentials({
@@ -18,41 +22,27 @@ export const config: NextAuthConfig = {
         password: { label: '密码', type: 'password', placeholder: '输入密码' },
       },
       async authorize(credentials) {
-        const user = await findUser({ email: credentials?.email || '' })
-        if (user && (await validatePassword(user, credentials?.password))) {
-          // will be saved in `user` property of the JWT
+        try {
+          const { email, password } = await SignInSchema.parseAsync(credentials)
+          const user = await findUser({ email: email })
+
+          if (!user) {
+            throw new Error("用户不存在或密码错误")
+          }
+
+          if (!await validatePassword(user, password)) {
+            throw new Error("用户不存在或密码错误.")
+          }
+          // return JSON object with the user data
           return user
-        } else {
-          // If you return null then an error will be displayed advising the user to check their details.
-          return null
-          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
+        } catch (error) {
+          if (error instanceof ZodError) {
+            // Return `null` to indicate that the credentials are invalid
+            return null
+          }
         }
       },
     }),
     emailProvider,
   ],
-  theme: {
-    logo: 'https://xuejiai.oss-cn-beijing.aliyuncs.com/xuejiai.svg',
-    colorScheme: 'auto', // "auto" | "dark" | "light"
-    brandColor: '#3377dd', // Hex color code
-    buttonText: '#FFF', // Hex color code
-  },
-  adapter: adapter,
-  session: {
-    strategy: 'jwt',
-    maxAge: 2592000, // 30 days
-  },
-  pages: {
-    signIn: '/signin', // 自定义登录页
-    verifyRequest: '/signin/verify-request',
-  },
-  callbacks: {
-    authorized,
-    signIn: signin,
-    session,
-    jwt,
-  },
-  debug: process.env.NODE_ENV !== "production" ? true : false,
-} satisfies NextAuthConfig
-
-export const { handlers, auth, signIn, signOut } = NextAuth(config)
+})

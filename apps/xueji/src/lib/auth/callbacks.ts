@@ -7,11 +7,12 @@ export function authorized({ request, auth } :{
   auth: Session | null
 }) {
   const { pathname } = request.nextUrl
-  console.log('Please Remove Me. This is a POC', auth)
-  if (pathname === '/demo/admin') {
-    return auth?.user?.role === 'admin'
-  }
-  if (pathname === '/me') return !!auth // 登录可访问该页面
+  console.log('Please Remove Me. This is a POC', pathname, auth)
+  // 在 middleware.ts 中处理
+  // if (pathname === '/demo/admin') {
+  //   return auth?.user?.role === "admin"
+  // }
+  // if (pathname === '/me') return !!auth // 登录可访问该页面
   return true
 }
 
