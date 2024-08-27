@@ -122,6 +122,8 @@ pn run seed # 生成演示数据
 nx dev xueji  # 启动开发环境, 注意需要全局安装: pnpm i nx -g
 nx graph    # 查看依赖关系
 nx report #获取当前已安装的所有插件的列表
+
+#无法自动格式化 ESLint: Restart ESLint Server
 ```
 
 ## 升级 Nx

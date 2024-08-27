@@ -10,7 +10,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "@next/next/no-html-link-for-pages": ["error", "apps/xueji/pages"]
+        "@next/next/no-html-link-for-pages": "off"
       }
     },
     {
@@ -28,9 +28,6 @@
       }
     }
   ],
-  "rules": {
-    "@next/next/no-html-link-for-pages": "off"
-  },
   "env": {
     "jest": true
   }
