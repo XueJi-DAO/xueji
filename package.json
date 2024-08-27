@@ -23,6 +23,11 @@
     "serve": "serve .next/analyze"
   },
   "private": true,
+  "engines": {
+    "node": ">=20.15.0",
+    "pnpm": "^9.9.0"
+  },
+  "packageManager": "pnpm@9.6.0",
   "dependencies": {
     "@apollo/client": "^3.11.4",
     "@auth/core": "^0.34.2",
