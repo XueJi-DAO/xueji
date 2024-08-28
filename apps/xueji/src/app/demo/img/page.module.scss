@@ -1,0 +1,38 @@
+.bgWrap {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bgText {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  padding-top: 40vh;
+  text-shadow: 1px 1px 1px #3c5c5e;
+}
+
+.imgDark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .imgLight {
+    display: none;
+  }
+
+  .imgDark {
+    display: unset;
+  }
+}
+
+.hr {
+  border: 0;
+  border-top: 1px solid #333;
+  margin: 1.5rem 0;
+}

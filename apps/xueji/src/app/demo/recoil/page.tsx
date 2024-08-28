@@ -1,5 +1,5 @@
-import Counter from '../../../components/Counter'
-import Canvas from '../../../components/Canvas'
+import Counter from '@/components/Counter'
+import Canvas from '@/components/Canvas'
 export default async function Page() {
   return (
     <>

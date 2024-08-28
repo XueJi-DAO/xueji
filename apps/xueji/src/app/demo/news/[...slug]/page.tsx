@@ -6,6 +6,9 @@ type NewsProps = {
   params: { slug: [] }
 }
 
+// allows a dynamic route to catch all paths.
+// catch all page is in `app/demo/news/[...slug]/page.tsx` it matches any path after `/demo/news`
+
 export default function News({ params }: NewsProps) {
   return (
     <div className={styles.container}>

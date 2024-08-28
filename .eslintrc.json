@@ -42,7 +42,7 @@
           "error",
           {
             "enforceBuildableLibDependency": true,
-            "allow": ["@/components", "@/lib"],
+            "allow": ["@/components", "@/lib", "@/types"],
             "depConstraints": [
               {
                 "sourceTag": "*",

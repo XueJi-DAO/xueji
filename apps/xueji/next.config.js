@@ -19,6 +19,12 @@ const nextConfig = {
         port: '',
         pathname: '/my-bucket/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'assets.vercel.com',
+        port: '',
+        pathname: '/image/upload/**',
+      },
     ],
   },
   webpack: (config, { isServer, dev }) => {
