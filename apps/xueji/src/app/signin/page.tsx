@@ -34,6 +34,7 @@ const errors: Record<SignInErrorTypes, string> = {
 }
 
 const Signin = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const router = useRouter()
   const { data: session } = useSession()
   const searchParams = useSearchParams()

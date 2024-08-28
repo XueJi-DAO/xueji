@@ -11,13 +11,14 @@ const ProtectedPage = () => {
 
   // Fetch content from protected route
   useEffect(() => {
-    ;(async () => {
+    const fetchData = async () => {
       const res = await fetch('/api/protected')
       const json = await res.json()
       if (json.content) {
         setContent(json.content)
       }
-    })
+    }
+    fetchData()
   }, [session])
 
   // If no session exists, display access denied message

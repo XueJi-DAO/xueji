@@ -65,11 +65,7 @@ export default function Page() {
                     <td>{movie.released}</td>
                     <td>{movie.tagline}</td>
                     <td>
-                      <ul>
-                        {movie?.directors?.map((director) => (
-                          <li key={director.name}>{director.name}</li>
-                        ))}
-                      </ul>
+                      <ul>{movie?.directors?.map((director) => <li key={director.name}>{director.name}</li>)}</ul>
                     </td>
                     <td>
                       <ul>

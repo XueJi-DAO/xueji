@@ -20,7 +20,9 @@ export const basicStyles = css`
   border: 1px solid lightgreen;
   border-right: none;
   border-bottom: none;
-  box-shadow: 5px 5px 0 0 lightgreen, 10px 10px 0 0 lightyellow;
+  box-shadow:
+    5px 5px 0 0 lightgreen,
+    10px 10px 0 0 lightyellow;
   transition: all 0.1s linear;
   margin: 1rem 0;
   padding: 1rem 0.5rem;
@@ -31,7 +33,9 @@ export const hoverStyles = css`
     color: white;
     background-color: lightgray;
     border-color: aqua;
-    box-shadow: -15px -15px 0 0 aqua, -30px -30px 0 0 cornflowerblue;
+    box-shadow:
+      -15px -15px 0 0 aqua,
+      -30px -30px 0 0 cornflowerblue;
   }
 `
 export const bounce = keyframes`

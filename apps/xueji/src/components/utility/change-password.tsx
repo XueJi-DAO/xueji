@@ -9,19 +9,20 @@ import styles from './password.module.css'
 import Snackbar from '@mui/material/Snackbar'
 import Typography from '@mui/material/Typography'
 
-interface ChangePasswordProps { }
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface ChangePasswordProps {}
 
 export const ChangePassword: FC<ChangePasswordProps> = () => {
   const router = useRouter()
+  const [errorMsg, setErrorMsg] = useState('')
+  const [newPassword, setNewPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [open, setOpen] = useState(false)
   const { data: session } = useSession()
   if (!session) {
     router.push('/signin')
     return
   }
-  const [errorMsg, setErrorMsg] = useState('')
-  const [newPassword, setNewPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-  const [open, setOpen] = useState(false)
 
   const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
     setOpen(false)

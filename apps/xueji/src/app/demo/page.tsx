@@ -6,11 +6,11 @@ import profilePic from '../../../public/logo.png'
 import DemoPage from './DemoPage'
 // import Counter from '../components/Counter'
 import { IconArrowLeft } from '@tabler/icons-react'
-import type { TypeA } from "@/types"
+import { TypeA } from '../../types/package-1'
 
 const val: TypeA = {
-  name: "next",
-};
+  name: 'next',
+}
 
 // 特性：built-in SEO
 // define metadata (e.g. meta and link tags inside your HTML head element) with an explicit metadata configuration in any layout or page.

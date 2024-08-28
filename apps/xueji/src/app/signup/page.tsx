@@ -73,7 +73,7 @@ function SignUp() {
               <h2 onClick={handleClick}>
                 <span className="p-2">测试</span>
               </h2>
-              <div className="text-sm m-2 text-gray-600 font-normal">
+              <div className="m-2 text-sm font-normal text-gray-600">
                 已有账号{' '}
                 <Link href="/auth/signin" className="text-blue-600">
                   登录

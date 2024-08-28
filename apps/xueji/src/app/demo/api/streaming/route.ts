@@ -1,4 +1,5 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream#convert_async_iterator_to_stream
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function iteratorToStream(iterator: any) {
   return new ReadableStream({
     async pull(controller) {

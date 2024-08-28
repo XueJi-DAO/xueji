@@ -1,4 +1,4 @@
-import { auth } from '@/lib/auth'
+import { auth } from '../lib/auth/index'
 import SessionData from '@/components/SessionData'
 import Image from 'next/image'
 

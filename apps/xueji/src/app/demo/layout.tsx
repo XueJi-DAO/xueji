@@ -1,7 +1,7 @@
 // 内置约定：layout.tsx 为路由段及其子段创建共享UI，以包装页面或子段。所有子路由页面都显示该组件
 // 内置约定：template.tsx: 类似 layout.tsx，需要创建新组件实例时使用
 import DemoLayout from './DemoLayout'
-import { GlobalState } from '@/components/utility/global-state'
+import { GlobalState } from '../../components/utility/global-state'
 
 // import { cookies, headers } from 'next/headers'; // 注意：仅可在服务端组件内部使用
 

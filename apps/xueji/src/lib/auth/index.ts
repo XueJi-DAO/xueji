@@ -1,18 +1,18 @@
 import 'server-only' // 防止这种客户端对服务器代码的意外使用，
 import NextAuth from 'next-auth'
-import { ZodError } from "zod"
-import { SignInSchema } from "@xueji/utils"
+import { ZodError } from 'zod'
+import { SignInSchema } from '@xueji/utils'
 import { findUser, validatePassword } from './user'
-import { authConfig } from "./config"
+import { authConfig } from './config'
 import { adapter } from './adapter'
 
 import { emailProvider } from './email-provider'
-import Credentials from "next-auth/providers/credentials"
+import Credentials from 'next-auth/providers/credentials'
 import GitHub from 'next-auth/providers/github'
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: adapter,
-  debug: process.env.NODE_ENV !== "production" ? true : false,
+  debug: process.env.NODE_ENV !== 'production' ? true : false,
   ...authConfig,
   providers: [
     GitHub,
@@ -27,11 +27,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           const user = await findUser({ email: email })
 
           if (!user) {
-            throw new Error("用户不存在或密码错误")
+            throw new Error('用户不存在或密码错误')
           }
 
-          if (!await validatePassword(user, password)) {
-            throw new Error("用户不存在或密码错误.")
+          if (!(await validatePassword(user, password))) {
+            throw new Error('用户不存在或密码错误.')
           }
           // return JSON object with the user data
           return user

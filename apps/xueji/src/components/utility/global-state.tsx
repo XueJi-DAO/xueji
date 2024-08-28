@@ -1,6 +1,6 @@
 'use client'
 
-import { UIContext } from '@/lib/context'
+import { UIContext } from '../../lib/context'
 import { FC, useEffect, useState } from 'react'
 
 interface GlobalStateProps {

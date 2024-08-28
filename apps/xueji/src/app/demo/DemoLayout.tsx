@@ -10,7 +10,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname()
 
   // read the active route segment within that slot
-  const loginSegments = useSelectedLayoutSegment()
+  // const loginSegments = useSelectedLayoutSegment()
   // console.log(loginSegments)
 
   return (

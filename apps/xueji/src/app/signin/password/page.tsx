@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangePassword } from '@/components/utility/change-password'
+import { ChangePassword } from '../../../components/utility/change-password'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
 

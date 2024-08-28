@@ -21,15 +21,15 @@ export default function Page() {
 
   return (
     <>
-      <div className="w-screen min-h-screen px-2 flex flex-col justify-start items-center">
+      <div className="flex min-h-screen w-screen flex-col items-center justify-start px-2">
         <main className="flex w-full">
           <div className="flex-1 px-20">
-            <div className="mb-6 align-center">
+            <div className="align-center mb-6">
               <p>
                 <strong>Films</strong> Neo4j example dataset.
               </p>
             </div>
-            <table className="w-full border border-solid border-collapse border-spacing-px border-[#dee2e6]">
+            <table className="w-full border-collapse border-spacing-px border border-solid border-[#dee2e6]">
               <thead>
                 <tr>
                   <th>#</th>

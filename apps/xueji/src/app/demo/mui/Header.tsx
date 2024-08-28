@@ -24,7 +24,7 @@ export default function Header() {
         }
 
         .active:after {
-          content: " (current page)";
+          content: ' (current page)';
         }
       `}</style>
       <div className={styles.signedInStatus}>
@@ -57,7 +57,7 @@ export default function Header() {
                 onClick={(e) => {
                   e.preventDefault()
                   client.resetStore().then(() => {
-                      signOut()
+                    signOut()
                   })
                 }}>
                 退出
@@ -66,7 +66,7 @@ export default function Header() {
           )}
         </p>
       </div>
-      <nav className="flex m-2 font-bold">
+      <nav className="m-2 flex font-bold">
         <ul className={styles.navItems}>
           <li className={styles.navItem}>
             <Link prefetch={false} href="/">

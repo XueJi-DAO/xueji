@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { createUser } from '@/lib/auth/user'
+import { createUser } from '../../../../lib/auth/user'
 export async function POST(request: Request) {
   // 示例: redirect('https://nextjs.org/');
 

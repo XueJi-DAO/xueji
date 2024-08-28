@@ -1,4 +1,4 @@
-import { auth } from '@/lib/auth'
+import { auth } from '../../../../lib/auth/index'
 
 export default async function ServerSidePage() {
   const session = await auth() // 服务组件获取登录状态

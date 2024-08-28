@@ -1,11 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import type { NextRequest } from 'next/server'
+import type { Session } from '@auth/core/types'
 
-import type {  NextRequest } from "next/server"
-import type { Session } from "@auth/core/types"
-
-export function authorized({ request, auth } :{
-  request: NextRequest
-  auth: Session | null
-}) {
+export function authorized({ request, auth }: { request: NextRequest; auth: Session | null }) {
   const { pathname } = request.nextUrl
   console.log('Please Remove Me. This is a POC', pathname, auth)
   // 在 middleware.ts 中处理
@@ -25,7 +22,7 @@ export async function signin({ user, account, profile, email, credentials }: any
   return true
 }
 
-export  async function session({ token, session } : any) {
+export async function session({ token, session }: any) {
   if (token?.accessToken) {
     session.accessToken = token.accessToken
   }
@@ -35,13 +32,13 @@ export  async function session({ token, session } : any) {
   return session
 }
 
-export async function jwt({ token, trigger, session, account } : any) {
+export async function jwt({ token, trigger, session, account }: any) {
   // ...可从数据库获取 user 信息
   // const existingUser = await getUserById(token.sub);
   // if (!existingUser) return token;
   // token.data = user
-  if (trigger === "update") token.name = session.user.name
-  if (account?.provider === "keycloak") {
+  if (trigger === 'update') token.name = session.user.name
+  if (account?.provider === 'keycloak') {
     return { ...token, accessToken: account.access_token }
   }
   token.data = { role: 'admin' }

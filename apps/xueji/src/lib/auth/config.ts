@@ -24,5 +24,5 @@ export const authConfig: NextAuthConfig = {
     session,
     jwt,
   },
-  debug: process.env.NODE_ENV !== "production" ? true : false,
+  debug: process.env.NODE_ENV !== 'production' ? true : false,
 }

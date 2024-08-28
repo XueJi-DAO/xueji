@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { auth } from '@/lib/auth'
+import { auth } from '../../../lib/auth/index'
 
 // 示例：api 访问权限
 export const GET = auth((req) => {

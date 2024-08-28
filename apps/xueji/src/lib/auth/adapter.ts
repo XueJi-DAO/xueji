@@ -1,3 +1,4 @@
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import { prisma } from '@/lib/prisma'
 
 import { PrismaAdapter } from '@auth/prisma-adapter'

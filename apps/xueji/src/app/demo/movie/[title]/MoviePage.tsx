@@ -45,15 +45,11 @@ export default function Movie({ title }: { title: string }) {
           </div>
           <div className="actors">
             <h2>Actors</h2>
-            {data?.movies[0].actors?.map((actor) => (
-              <div key={actor.name}>{actor.name}</div>
-            ))}
+            {data?.movies[0].actors?.map((actor) => <div key={actor.name}>{actor.name}</div>)}
           </div>
           <div className="directors">
             <h2>Directors</h2>
-            {data?.movies[0].directors?.map((director) => (
-              <div key={director.name}>{director.name}</div>
-            ))}
+            {data?.movies[0].directors?.map((director) => <div key={director.name}>{director.name}</div>)}
           </div>
         </div>
       </main>

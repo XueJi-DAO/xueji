@@ -1,5 +1,5 @@
 import Email from 'next-auth/providers/nodemailer'
-import  nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer'
 import type { EmailConfig } from 'next-auth/providers/email'
 
 function html({ url, host, email }: Record<'url' | 'host' | 'email', string>) {
@@ -74,4 +74,4 @@ const emailConfig: EmailConfig = {
   },
 }
 
-export const emailProvider = Email(emailConfig);
+export const emailProvider = Email(emailConfig)

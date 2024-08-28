@@ -10,7 +10,7 @@ export interface MetaUiProps { }
 export function MetaUi(props: MetaUiProps) {
   return (
     <div>
-      <h1 className="bg-gray-600 text-white mb-2">Welcome to Meta Ui!</h1>
+      <h1 className="mb-2 bg-gray-600 text-white">Welcome to Meta Ui!</h1>
       <Button variant="contained">Mui Button</Button>
       <Button variant="contained" component={Link} href="/">
         Go to the home page

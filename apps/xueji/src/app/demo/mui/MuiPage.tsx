@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 'use client'
 import { useContext } from 'react'
-import { UIContext } from '@/lib/context'
+import { UIContext } from '../../../lib/context'
 
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'

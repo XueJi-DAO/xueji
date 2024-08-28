@@ -8,9 +8,9 @@ import Link from '../../demo/mui/Link'
 
 export default function VerifyRequestPage() {
   return (
-    <div className="flex flex-col justify-center items-center" style={{ height: '100vh' }}>
+    <div className="flex flex-col items-center justify-center" style={{ height: '100vh' }}>
       <div
-        className="bg-white flex flex-col justify-center rounded-xl p-8 shadow-px shadow-xl"
+        className="shadow-px flex flex-col justify-center rounded-xl bg-white p-8 shadow-xl"
         style={{ width: '360px', height: '400px' }}>
         <div className="card flex flex-col items-center">
           <Image src="/logo.png" width="100" height="100" alt="Logo" style={{ marginBottom: '20px' }} />

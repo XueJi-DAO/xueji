@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
-import { changePassword } from '../../../../lib/user'
-import { auth } from '../../../../lib/auth'
+import { changePassword } from '@/lib/auth/user'
+import { auth } from '@/lib/auth/index'
 
 export const POST = auth(async (req) => {
   if (req.auth) {

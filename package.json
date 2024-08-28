@@ -20,7 +20,8 @@
     "prepare": "husky",
     "build-rust": "rustc --target wasm32-unknown-unknown -O --crate-type=cdylib apps/xueji/wasm/add.rs -o apps/xueji/public/add.wasm",
     "analyze": "cross-env ANALYZE=true nx build xueji",
-    "serve": "serve .next/analyze"
+    "serve": "serve .next/analyze",
+    "lint": "nx run-many -t lint"
   },
   "private": true,
   "engines": {
