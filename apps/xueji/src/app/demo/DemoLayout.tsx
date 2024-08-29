@@ -18,9 +18,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
       {globalStyles}
       <Header />
       <h2 className="m-2 rounded-lg bg-gray-800 p-2 text-white">pathname:{pathname}</h2>
-      <nav>....页面内容 start....</nav>
       {children}
-      <nav>....页面内容 end....</nav>
     </div>
   )
 }

@@ -6,27 +6,42 @@ export const globalStyles = (
     styles={css`
       html,
       body {
+        padding: 0 1rem;
         margin: 0;
-        // background: #cfc2ae;
+        // background: papayawhip;
         min-height: 100%;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 16px;
       }
     `}
   />
 )
 
-export const basicStyles = css`
-  background-color: white;
-  color: cornflowerblue;
-  border: 1px solid lightgreen;
-  border-right: none;
-  border-bottom: none;
-  box-shadow:
-    5px 5px 0 0 lightgreen,
-    10px 10px 0 0 lightyellow;
-  transition: all 0.1s linear;
-  margin: 1rem 0;
-  padding: 1rem 0.5rem;
-`
+export const basicStyles = css({
+  backgroundColor: 'white',
+  color: 'cornflowerblue',
+  border: '1px solid lightgreen',
+  borderRight: 'none',
+  borderBottom: 'none',
+  boxShadow: '5px 5px 0 0 lightgreen, 10px 10px 0 0 lightyellow',
+  transition: 'all 0.1s linear',
+  margin: '3rem 0',
+  padding: '1rem 0.5rem',
+})
+
+// export const basicStyles = css`
+//   background-color: white;
+//   color: cornflowerblue;
+//   border: 1px solid lightgreen;
+//   border-right: none;
+//   border-bottom: none;
+//   box-shadow:
+//     5px 5px 0 0 lightgreen,
+//     10px 10px 0 0 lightyellow;
+//   transition: all 0.1s linear;
+//   margin: 1rem 0;
+//   padding: 1rem 0.5rem;
+// `
 
 export const hoverStyles = css`
   &:hover {

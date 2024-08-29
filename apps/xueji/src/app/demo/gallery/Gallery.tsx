@@ -33,26 +33,24 @@ const Thumbnail = ({ id, i }) => (
         </Link>
       </motion.div>
     </motion.div>
-    <style>
+    <style jsx>
       {`
-            .thumbnail {
-                flex: 1 0 33%;
-                margin: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-            }
-
-            .frame {
-                overflow: hidden;
-            }
-
-            .thumbnail img {
-                width: 100%;
-                height: 100%;
-            }
-        `}
+        .thumbnail {
+          flex: 1 0 33%;
+          margin: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+        .frame {
+          overflow: hidden;
+        }
+        .thumbnail img {
+          width: 100%;
+          height: 100%;
+        }
+      `}
     </style>
   </>
 )
@@ -73,9 +71,9 @@ const Gallery = () => {
           ))}
         </motion.div>
       </div>
-      <style>
+      <style jsx>
         {`
-        h3 {
+          h3 {
             font-size: 30px;
             text-align: center;
             position: fixed;
@@ -85,36 +83,36 @@ const Gallery = () => {
             left: 50%;
             transform: translateX(-50%);
             pointer-events: none;
-        }
+          }
 
-        .gallery {
+          .gallery {
             padding: 40px;
             margin: 0 auto;
             width: 100%;
             max-width: 1200px;
             position: relative;
-        }
+          }
 
-        .thumbnails {
+          .thumbnails {
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
             justify-content: space-between;
-        }
-
-        @media screen and (min-width: 600px) {
-          h3 {
-            font-size: 40px;
-            bottom: -40px;
           }
-        }
 
-        @media screen and (min-width: 800px) {
-          h3 {
-            font-size: 60px;
-            bottom: -60px;
+          @media screen and (min-width: 600px) {
+            h3 {
+              font-size: 40px;
+              bottom: -40px;
+            }
           }
-        }
+
+          @media screen and (min-width: 800px) {
+            h3 {
+              font-size: 60px;
+              bottom: -60px;
+            }
+          }
         `}
       </style>
     </>

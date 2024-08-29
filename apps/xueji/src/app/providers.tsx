@@ -15,9 +15,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <ApolloProvider client={apolloClient}>
         {/* <ThemeProvider theme={theme}>
           <CssBaseline />
-          <CacheProvider>{children}</CacheProvider>
         </ThemeProvider> */}
-        {children}
+        <CacheProvider>{children}</CacheProvider>
       </ApolloProvider>
     </RecoilRoot>
   )
