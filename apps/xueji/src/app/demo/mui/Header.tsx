@@ -18,15 +18,6 @@ export default function Header() {
       <noscript>
         <style>{`.no-js-show { opacity: 1; top: 0; }`}</style>
       </noscript>
-      <style jsx global>{`
-        .nav-link {
-          text-decoration: none;
-        }
-
-        .active:after {
-          content: ' (current page)';
-        }
-      `}</style>
       <div className={styles.signedInStatus}>
         <p className={`no-js-show ${!session && loading ? styles.loading : styles.loaded}`}>
           {!session && (

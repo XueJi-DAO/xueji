@@ -21,7 +21,9 @@
     "build-rust": "rustc --target wasm32-unknown-unknown -O --crate-type=cdylib apps/xueji/wasm/add.rs -o apps/xueji/public/add.wasm",
     "analyze": "cross-env ANALYZE=true nx build xueji",
     "serve": "serve .next/analyze",
-    "lint": "nx run-many -t lint"
+    "lint": "nx run-many -t lint",
+    "server:ws": "cross-env HOST=localhost PORT=1234 YPERSISTENCE=./yjs-wss-db npx y-websocket",
+    "server:webrtc": "cross-env HOST=localhost PORT=1235 npx y-webrtc"
   },
   "private": true,
   "engines": {
@@ -38,6 +40,7 @@
     "@emotion/styled": "^11.13.0",
     "@gsap/react": "^2.1.1",
     "@lexical/react": "^0.17.1",
+    "@lexical/utils": "^0.17.1",
     "@lexical/yjs": "^0.17.1",
     "@mui/material": "^5.16.7",
     "@neo4j/graphql": "^5.6.0",
@@ -83,6 +86,7 @@
     "tslib": "^2.6.3",
     "unified": "^11.0.5",
     "uuid": "^10.0.0",
+    "y-webrtc": "^10.3.0",
     "y-websocket": "^2.0.4",
     "yjs": "^13.6.18",
     "zod": "^3.23.8"

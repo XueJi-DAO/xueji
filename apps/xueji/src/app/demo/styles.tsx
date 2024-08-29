@@ -7,11 +7,6 @@ export const globalStyles = (
       html,
       body {
         padding: 0 1rem;
-        margin: 0;
-        // background: papayawhip;
-        min-height: 100%;
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 16px;
       }
     `}
   />
