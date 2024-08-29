@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { images } from '../../constants'
+import styles from '../../gallery.module.scss'
 
 const transition = {
   duration: 1,
@@ -25,37 +26,12 @@ const backVariants = {
 
 const SingleImage = ({ index }) => (
   <>
-    <motion.div className="single" initial="exit" animate="enter" exit="exit">
+    <motion.div className={styles.single} initial="exit" animate="enter" exit="exit">
       <motion.img variants={imageVariants} src={images[index]} alt="The Barbican" />
-      <motion.div className="back" variants={backVariants}>
+      <motion.div className={styles.back} variants={backVariants}>
         <Link href="/demo/gallery">← Back</Link>
       </motion.div>
     </motion.div>
-    <style>
-      {`
-        .single {
-            overflow: hidden;
-            height: 100vh;
-        }
-
-        .single img {
-            max-width: 100%;
-            max-height: 100vh;
-        }
-
-        .back {
-            position: fixed;
-            top: 150px;
-            right: 50px;
-            font-size: 54px;
-            z-index: 1;
-        }
-
-        .back a {
-            text-decoration: none;
-        }
-`}
-    </style>
   </>
 )
 

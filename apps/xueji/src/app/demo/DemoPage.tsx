@@ -14,6 +14,7 @@ gsap.registerPlugin(useGSAP)
 // 特性：Routing Hooks
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import Gsap from '@/components/demo/Gsap'
+import TsParticles from '@/components/TsParticles'
 
 const DemoPage = () => {
   // const line1 = useRef(null)
@@ -63,6 +64,8 @@ const DemoPage = () => {
   const replace = false
   return (
     <>
+      <TsParticles />
+
       <MetaUi />
       <h2>接口返回数据: {data?.foo}</h2>
       <a

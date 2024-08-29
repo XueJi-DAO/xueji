@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import styles from './gallery.module.scss'
 
 import { images } from './constants'
 
@@ -26,42 +27,23 @@ const imageVariants = {
 
 const Thumbnail = ({ id, i }) => (
   <>
-    <motion.div className="thumbnail" variants={thumbnailVariants}>
-      <motion.div className="frame" whileHover="hover" variants={frameVariants} transition={transition}>
+    <motion.div className={styles.thumbnail} variants={thumbnailVariants}>
+      <motion.div className={styles.frame} whileHover="hover" variants={frameVariants} transition={transition}>
         <Link href="/demo/gallery/image/[index]" as={`/demo/gallery/image/${i}`} scroll={false} legacyBehavior>
           <motion.img src={id} alt="The Barbican" variants={imageVariants} transition={transition} />
         </Link>
       </motion.div>
     </motion.div>
-    <style jsx>
-      {`
-        .thumbnail {
-          flex: 1 0 33%;
-          margin: 10px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-        }
-        .frame {
-          overflow: hidden;
-        }
-        .thumbnail img {
-          width: 100%;
-          height: 100%;
-        }
-      `}
-    </style>
   </>
 )
 
 const Gallery = () => {
   return (
     <>
-      <h3>Motion</h3>
-      <div className="gallery">
+      <h3 className={styles.title}>Motion</h3>
+      <div className={styles.gallery}>
         <motion.div
-          className="thumbnails"
+          className={styles.thumbnails}
           initial="initial"
           animate="enter"
           exit="exit"
@@ -71,50 +53,6 @@ const Gallery = () => {
           ))}
         </motion.div>
       </div>
-      <style jsx>
-        {`
-          h3 {
-            font-size: 30px;
-            text-align: center;
-            position: fixed;
-            bottom: -100px;
-            z-index: 1;
-            color: #f9fbf8;
-            left: 50%;
-            transform: translateX(-50%);
-            pointer-events: none;
-          }
-
-          .gallery {
-            padding: 40px;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 1200px;
-            position: relative;
-          }
-
-          .thumbnails {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: space-between;
-          }
-
-          @media screen and (min-width: 600px) {
-            h3 {
-              font-size: 40px;
-              bottom: -40px;
-            }
-          }
-
-          @media screen and (min-width: 800px) {
-            h3 {
-              font-size: 60px;
-              bottom: -60px;
-            }
-          }
-        `}
-      </style>
     </>
   )
 }
