@@ -8,5 +8,6 @@
 // const handler = NextAuth(authOptions)
 // export { handler as GET, handler as POST }
 
-import { handlers } from '../../../../lib/auth/index'
+import { handlers } from '@/lib/auth/index'
 export const { GET, POST } = handlers
+// export const runtime = 'edge'
