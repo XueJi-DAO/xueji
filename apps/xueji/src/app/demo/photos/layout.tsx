@@ -1,7 +1,8 @@
+import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 import GithubCorner from '../../../components/github-corner'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: '动态路由拦截',
   description: 'A sample Next.js app showing dynamic routing with modals as a route.',
   metadataBase: new URL('https://nextgram.vercel.app'),

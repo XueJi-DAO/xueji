@@ -1,6 +1,7 @@
+import type { Metadata } from 'next'
 import MovieListPage from './MovieListPage'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'GraphQL 访问 neo4j 示例',
   description: 'GraphQL 访问 neo4j 示例',
 }

@@ -1,6 +1,7 @@
+import type { Metadata } from 'next'
 import ProtectedPage from './protected-page'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: '权限保护',
   description: '权限保护',
 }

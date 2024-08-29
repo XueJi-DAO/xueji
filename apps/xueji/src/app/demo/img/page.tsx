@@ -1,8 +1,9 @@
+import type { Metadata } from 'next'
 import Image, { ImageProps } from 'next/image'
 import styles from './page.module.scss'
 import mountains from '../../../../public/mountains.jpg'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Image Component with Next.js',
   description:
     'This page demonstrates the usage of the next/image component with live examples. This component is designed to automatically optimize images on-demand as the browser requests them.',
@@ -18,8 +19,8 @@ const ThemeImage = (props: Props) => {
 
   return (
     <>
-      <Image {...rest} src={srcLight} className={styles.imgLight} />
-      <Image {...rest} src={srcDark} className={styles.imgDark} />
+      <Image {...rest} src={srcLight} className="dark:hidden" />
+      <Image {...rest} src={srcDark} className="hidden dark:block" />
     </>
   )
 }

@@ -43,6 +43,9 @@ const nextConfig = {
     config.resolve.alias.canvas = false
     return config
   },
+  experimental: {
+    // optimizePackageImports: ['package-name'],
+  },
   nx: {
     // Set this to true if you would like to use SVGR
     // See: https://github.com/gregberge/svgr

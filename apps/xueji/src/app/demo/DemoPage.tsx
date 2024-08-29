@@ -42,7 +42,7 @@ const DemoPage = () => {
     gsap.to(currentTarget, { rotation: 180 })
   })
 
-  // 注意：这些新钩子只在客户端组件中使用。
+  // 注意：这些钩子只在客户端组件中使用。
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
