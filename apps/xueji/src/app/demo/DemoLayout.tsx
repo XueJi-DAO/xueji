@@ -14,11 +14,13 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
   // console.log(loginSegments)
 
   return (
-    <div className="flex size-full min-h-screen flex-col justify-between">
+    <div className="flex size-full min-h-screen flex-col justify-start">
       {globalStyles}
       <Header />
-      <h2 className="m-2 rounded-lg bg-gray-800 p-2 text-white">pathname:{pathname}</h2>
-      {children}
+      <div>
+        <h2 className="m-2 rounded-lg bg-gray-800 p-2 text-white">pathname:{pathname}</h2>
+        {children}
+      </div>
     </div>
   )
 }

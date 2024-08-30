@@ -144,6 +144,16 @@ export default function Header() {
               路由拦截
             </Link>
           </li>
+          <li className={styles.navItem}>
+            <Link prefetch={false} href="/demo/hooks">
+              Hooks
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link prefetch={false} href="/demo/lexical">
+              编辑器
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

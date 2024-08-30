@@ -73,6 +73,15 @@ const nextConfig = {
       },
     ]
   },
+
+  compiler: {
+    // Remove `console.*` output except `console.error`
+    // removeConsole: {
+    //   exclude: ["error"],
+    // },
+    // Uncomment this to suppress all logs.
+    // removeConsole: true,
+  },
 }
 
 const plugins = [withNx, withBundleAnalyzer]
