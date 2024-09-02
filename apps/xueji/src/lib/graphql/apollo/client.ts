@@ -1,48 +1,24 @@
-import { useMemo } from 'react'
-import { ApolloClient, InMemoryCache, NormalizedCacheObject, createHttpLink } from '@apollo/client'
-import merge from 'deepmerge'
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
+import { registerApolloClient } from '@apollo/experimental-nextjs-app-support'
 
-let apolloClient: ApolloClient<NormalizedCacheObject>
-
-function createIsomorphLink() {
-  return createHttpLink({
-    uri: process.env.NEXT_PUBLIC_XUEJI_SERVER_URL + '/graphql',
-    credentials: 'same-origin',
-  })
-}
-
-function createApolloClient() {
+export const { getClient } = registerApolloClient(() => {
   return new ApolloClient({
-    ssrMode: typeof window === 'undefined',
-    link: createIsomorphLink(),
     cache: new InMemoryCache(),
+    link: new HttpLink({
+      // See more information about this GraphQL endpoint at https://studio.apollographql.com/public/spacex-l4uc6p/variant/main/home
+      // uri: process.env.NEXT_PUBLIC_XUEJI_SERVER_URL + "/graphql",
+      uri: 'https://main--spacex-l4uc6p.apollographos.net/graphql',
+      // you can configure the Next.js fetch cache here if you want to
+      fetchOptions: { cache: 'force-cache' },
+      // alternatively you can override the default `fetchOptions` on a per query basis
+      // ```js
+      // const result = await getClient().query({
+      //   query: MY_QUERY,
+      //   context: {
+      //     fetchOptions: { cache: "force-cache" },
+      //   },
+      // });
+      // ```
+    }),
   })
-}
-
-export function initializeApollo(initialState = null) {
-  const _apolloClient = apolloClient ?? createApolloClient()
-
-  // If your page has Next.js data fetching methods that use Apollo Client, the initial state get hydrated here
-  if (initialState) {
-    // Get existing cache, loaded during client side data fetching
-    const existingCache = _apolloClient.extract()
-
-    // Merge the existing cache into data passed from getStaticProps/getServerSideProps
-    const data = merge(initialState, existingCache)
-
-    // Restore the cache with the merged data
-    _apolloClient.cache.restore(data)
-  }
-
-  // For SSG and SSR always create a new Apollo Client
-  if (typeof window === 'undefined') return _apolloClient
-  // Create the Apollo Client once in the client
-  if (!apolloClient) apolloClient = _apolloClient
-
-  return _apolloClient
-}
-
-export function useApollo(initialState) {
-  const store = useMemo(() => initializeApollo(initialState), [initialState])
-  return store
-}
+})
