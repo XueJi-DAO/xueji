@@ -1,6 +1,5 @@
 import crypto from 'crypto'
-// eslint-disable-next-line import/no-named-as-default
-import { prisma } from '../prisma/index'
+import prisma from '../prisma/index'
 import { Prisma } from '@prisma/client'
 
 export async function createUser({ email, password }: { email: string; password: string }) {

@@ -15,7 +15,10 @@ export default function getDriver() {
   if (!driver) {
     // For more info see: https://github.com/neo4j/neo4j-javascript-driver/#numbers-and-the-integer-type
     driver = neo4j.driver(uri, neo4j.auth.basic(username, password))
+    driver.getServerInfo().then((serverInfo) => {
+      console.log('Neo4j Connection established')
+      console.log(serverInfo)
+    })
   }
-
   return driver
 }

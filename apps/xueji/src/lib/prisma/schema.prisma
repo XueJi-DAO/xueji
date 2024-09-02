@@ -74,3 +74,9 @@ model Post {
   author    User?    @relation(fields: [authorId], references: [id])
   authorId  String?
 }
+
+model todos {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  title     String
+}
