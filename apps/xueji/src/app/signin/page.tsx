@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useSession } from 'next-auth/react'
+import { useLocale, useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
 import Image from 'next/image'
 import styles from './signin.module.css'
@@ -34,6 +36,9 @@ const errors: Record<SignInErrorTypes, string> = {
 }
 
 const Signin = () => {
+  const t = useTranslations('LoginPage')
+  const locale = useLocale()
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const router = useRouter()
   const { data: session } = useSession()

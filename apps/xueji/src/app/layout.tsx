@@ -2,7 +2,10 @@
 import './globals.css'
 // 模块化导入 import styles from './style.module.scss'
 import type { Viewport } from 'next'
+import type { ReactNode } from 'react'
 import { Inter } from 'next/font/google'
+import { NextIntlClientProvider } from 'next-intl'
+import { getLocale, getMessages } from 'next-intl/server'
 import { Providers } from './providers'
 import { SessionProvider } from 'next-auth/react'
 import { auth } from '../lib/auth'
@@ -22,9 +25,16 @@ export const viewport: Viewport = {
   width: 'device-width',
 }
 
+type Props = {
+  children: ReactNode
+}
+
 // Root layouts: shared across all pages in an application. Must contain html and body tags.
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: Props) {
   const session = await auth()
+  const locale = await getLocale()
+  const messages = await getMessages()
+
   // TODO: Look into https://react.dev/reference/react/experimental_taintObjectReference
   // filter out sensitive data before passing to client.
   if (session?.user) {
@@ -35,11 +45,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     }
   }
   return (
-    <html lang="zh-Hans-CN">
+    <html lang={locale == 'en' ? 'en' : 'zh-Hans-CN'}>
       <body className={inter.className}>
         {/* 服务端组件不支持 Provider, 使用客户端组件封装一下 */}
         <SessionProvider session={session}>
-          <Providers>{children}</Providers>
+          <NextIntlClientProvider messages={messages}>
+            <Providers>{children}</Providers>
+          </NextIntlClientProvider>
         </SessionProvider>
       </body>
     </html>

@@ -1,0 +1,29 @@
+{
+  "AppLayout": {
+    "home": "首页",
+    "logout": "退出",
+    "profile": "简介"
+  },
+  "HomePage": {
+    "title": "首页"
+  },
+  "LocaleSwitcher": {
+    "zh": "中文",
+    "en": "English",
+    "label": "语言"
+  },
+  "LoginPage": {
+    "credentials": "用户名密码: jane@doe.com / next-intl",
+    "description": "请输入详情",
+    "email": "Email",
+    "invalidCredentials": "用户名密码错误",
+    "invalidEmail": "邮箱错误",
+    "invalidPassword": "密码错误",
+    "login": "登录",
+    "password": "密码",
+    "title": "欢迎回来"
+  },
+  "AboutPage": {
+    "title": "关于"
+  }
+}

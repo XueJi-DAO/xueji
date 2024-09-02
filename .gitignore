@@ -50,3 +50,7 @@ Thumbs.db
 .next/
 out/
 *.local
+
+/test-results/
+/playwright-report/
+/playwright/.cache/
