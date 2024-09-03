@@ -3,7 +3,7 @@ const { join } = require('path')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // darkMode: ['class'], // 通过css类控制
+  darkMode: ['class'], // 通过css类控制
   content: [
     join(__dirname, '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
     ...createGlobPatternsForDependencies(__dirname),
