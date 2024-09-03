@@ -1,5 +1,10 @@
-import { HttpLink } from '@apollo/client'
-import { ApolloNextAppProvider, ApolloClient, InMemoryCache } from '@apollo/experimental-nextjs-app-support'
+import { HttpLink, ApolloLink } from '@apollo/client'
+import {
+  ApolloNextAppProvider,
+  ApolloClient,
+  InMemoryCache,
+  SSRMultipartLink,
+} from '@apollo/experimental-nextjs-app-support'
 
 function makeClient() {
   const httpLink = new HttpLink({
@@ -9,7 +14,15 @@ function makeClient() {
 
   return new ApolloClient({
     cache: new InMemoryCache(),
-    link: httpLink,
+    link:
+      typeof window === 'undefined'
+        ? ApolloLink.from([
+            new SSRMultipartLink({
+              stripDefer: true,
+            }),
+            httpLink,
+          ])
+        : httpLink,
   })
 }
 

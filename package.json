@@ -14,7 +14,7 @@
     "generate": "dotenv -e .env.local -- pnpm dlx prisma generate --schema=apps/xueji/src/lib/prisma/schema.prisma",
     "migrate-dev": "dotenv -e .env.local -- pnpm dlx prisma migrate dev --schema=./apps/xueji/src/lib/prisma/schema.prisma",
     "migrate-deploy": "dotenv -e .env.local -- pnpm dlx prisma migrate deploy --schema=./apps/xueji/src/lib/prisma/schema.prisma",
-    "codegen": "graphql-codegen -w",
+    "codegen": "graphql-codegen --config ./tools/codegen.ts",
     "seed": "dotenv -e .env.local ts-node tools/seed.ts",
     "gen-schema": "ts-node tools/neo4j",
     "prepare": "husky",
