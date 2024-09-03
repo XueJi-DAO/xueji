@@ -1,8 +1,13 @@
-import markdownStyles from './markdown-styles.module.css'
+import './markdown-styles.css'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import getMdxSource from '@/lib/blog/mdx'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+import rehypePrettyCode from 'rehype-pretty-code'
 import CustomLink from './CustomLink'
-
+import { cn } from '@/lib/utils'
+import { sans } from '@/lib/blog/fonts'
+import { Typography } from '@mui/material'
+import Counter from '@/components/Counter'
 type Props = {
   content: string
 }
@@ -15,25 +20,40 @@ export async function PostBody({ content }: Props) {
         {props.children}
       </h1>
     ),
+    h2: (props) => <Typography variant="h2" {...props} />,
     TestComponent: (await import('./TestComponent')).default,
+    Counter: () => <Counter />,
   }
-
-  const source = getMdxSource(content, {})
-
+  console.log(content)
   return (
     <div className="mx-auto max-w-4xl">
       {/* <MDXRemote
-        source={`# Hello World
-                [link](https://nextjs.org)
-                <TestComponent name="next-mdx-remote" />
-                This is from Server Components!
-              `}
+        source={'[This is a link](https://www.xuejiai.com)<TestComponent name="next-mdx-remote" />'}
         components={{ ...components }}
       /> */}
       {/* 使用 remark 解析 markdown 文件*/}
       {/* <div className={markdownStyles['markdown']} dangerouslySetInnerHTML={{ __html: content }} /> */}
-
-      <MDXRemote {...source} components={{ ...components }} />
+      <div className={cn('markdown', sans.className)}>
+        <MDXRemote
+          source={content}
+          components={{ ...components }}
+          options={{
+            parseFrontmatter: true,
+            mdxOptions: {
+              remarkPlugins: [remarkMath],
+              rehypePlugins: [
+                rehypeKatex,
+                [
+                  rehypePrettyCode,
+                  {
+                    theme: 'material-theme-palenight',
+                  },
+                ],
+              ],
+            },
+          }}
+        />
+      </div>
     </div>
   )
 }
