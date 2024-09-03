@@ -1,15 +1,28 @@
-import { HttpLink } from '@apollo/client'
-import { ApolloNextAppProvider, ApolloClient, InMemoryCache } from '@apollo/experimental-nextjs-app-support'
+import { HttpLink, ApolloLink } from '@apollo/client'
+import {
+  ApolloNextAppProvider,
+  ApolloClient,
+  InMemoryCache,
+  SSRMultipartLink,
+} from '@apollo/experimental-nextjs-app-support'
 
 function makeClient() {
   const httpLink = new HttpLink({
     // uri: process.env.NEXT_PUBLIC_XUEJI_SERVER_URL + '/graphql',
-    uri: 'https://main--spacex-l4uc6p.apollographos.net/graphql',
+    uri: 'http://localhost:4001/products/graphql',
   })
 
   return new ApolloClient({
     cache: new InMemoryCache(),
-    link: httpLink,
+    link:
+      typeof window === 'undefined'
+        ? ApolloLink.from([
+            new SSRMultipartLink({
+              stripDefer: true,
+            }),
+            httpLink,
+          ])
+        : httpLink,
   })
 }
 

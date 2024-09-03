@@ -1,11 +1,11 @@
 import type { CodegenConfig } from '@graphql-codegen/cli'
 
 const config: CodegenConfig = {
-  schema: './apps/xueji/lib/graphql/schema.graphql',
+  schema: './apps/xueji/src/lib/graphql/schema.graphql',
   // documents: './apps/xueji/app/**/*.tsx',
   ignoreNoDocuments: true,
   generates: {
-    './apps/xueji/lib/graphql/codegen/': {
+    './apps/xueji/src/lib/graphql/codegen/': {
       preset: 'client',
       plugins: [],
     },

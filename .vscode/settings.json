@@ -14,6 +14,7 @@
     "classname",
     "clevision",
     "clsx",
+    "codegen",
     "commitlint",
     "csstype",
     "Cypher",
@@ -64,6 +65,7 @@
     "xueji"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
   // 折叠显示
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,

@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
+// import Link from 'next/link'
 import Image from 'next/image'
 
 type Props = {
@@ -23,7 +24,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link href={`/posts/${slug}`} aria-label={title}>
+        <Link href={`/blog/posts/${slug}`} aria-label={title}>
           {image}
         </Link>
       ) : (

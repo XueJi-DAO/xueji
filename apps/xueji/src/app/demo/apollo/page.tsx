@@ -1,20 +1,17 @@
-import { Suspense } from 'react'
-import { FiveRockets } from './FiveRocketsClient'
-import { LatestMissionName } from './LatestMissionName'
+import { ProductsClient } from './ProductsClient'
+import { ProductRSC } from './ProductRSC'
 
 export default async function Home() {
   return (
     <>
       <article>
         <h2>
-          Latest mission: <LatestMissionName />
+          Latest mission: <ProductRSC />
         </h2>
       </article>
       <article>
         <h2>Five Rockets:</h2>
-        <Suspense fallback={<div>loading...</div>}>
-          <FiveRockets />
-        </Suspense>
+        <ProductsClient />
       </article>
     </>
   )

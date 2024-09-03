@@ -22,7 +22,7 @@ body {
   margin: 0;
   /*background: #cfc2ae; #ede0cf #f7f7f7;*/
   /* background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
-  min-height: 100%;
+  min-height: 100vh;
   font-size: 14px;
   font-family:
     system-ui,
@@ -34,6 +34,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.o-blog-title {
+  view-transition-name: blog-title;
+  width: fit-content;
+}
+
+.o-post-title {
+  view-transition-name: post-title;
+  width: fit-content;
 }
 
 label {

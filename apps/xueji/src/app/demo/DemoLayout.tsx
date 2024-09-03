@@ -4,8 +4,7 @@ import { usePathname, useSelectedLayoutSegment } from 'next/navigation'
 import { globalStyles } from './styles'
 import Header from './mui/Header'
 
-// 提示：不能将服务端组件直接导入到客户端组件中
-// 将一个服务端组件作为子组件或属性传递给客户端组件。children 或 props
+// 提示：不能将服务端组件直接导入到客户端组件中，将一个服务端组件作为子组件或属性传递给客户端组件。children 或 props
 const DemoLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname()
 
