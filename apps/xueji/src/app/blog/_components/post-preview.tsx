@@ -28,7 +28,7 @@ export function PostPreview({ title, coverImage, date, excerpt, author, slug }: 
       <div className="mb-4 text-lg">
         <DateFormatter dateString={date} />
       </div>
-      <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
+      <p className="mb-4 text-pretty text-lg leading-relaxed">{excerpt}</p>
       <Avatar name={author.name} picture={author.picture} />
     </div>
   )

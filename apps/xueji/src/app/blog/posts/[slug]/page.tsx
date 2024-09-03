@@ -9,6 +9,12 @@ import Header from '../../_components/header'
 import { PostBody } from '../../_components/post-body'
 import { PostHeader } from '../../_components/post-header'
 
+type Params = {
+  params: {
+    slug: string
+  }
+}
+
 export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug)
 
@@ -32,23 +38,17 @@ export default async function Post({ params }: Params) {
   )
 }
 
-type Params = {
-  params: {
-    slug: string
-  }
-}
-
-export function generateMetadata({ params }: Params): Metadata {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const post = getPostBySlug(params.slug)
-
   if (!post) {
     return notFound()
   }
 
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`
+  const title = `${post.title} | ${CMS_NAME}`
 
   return {
     title,
+    authors: post?.author?.name ? [{ name: post?.author?.name }] : [],
     openGraph: {
       title,
       images: [post.ogImage.url],
