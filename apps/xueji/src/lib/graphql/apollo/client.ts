@@ -7,7 +7,7 @@ export const { getClient } = registerApolloClient(() => {
     link: new HttpLink({
       // See more information about this GraphQL endpoint at https://studio.apollographql.com/public/spacex-l4uc6p/variant/main/home
       // uri: process.env.NEXT_PUBLIC_XUEJI_SERVER_URL + "/graphql",
-      uri: 'https://main--spacex-l4uc6p.apollographos.net/graphql',
+      uri: 'http://localhost:4001/products/graphql',
       // you can configure the Next.js fetch cache here if you want to
       fetchOptions: { cache: 'force-cache' },
       // alternatively you can override the default `fetchOptions` on a per query basis
