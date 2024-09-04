@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getAllPosts, getPostBySlug } from '@/lib/blog/api'
 import { CMS_NAME } from '@/lib/constants'
-// import markdownToHtml from '@/lib/blog/markdownToHtml'
+
 import Alert from '../../_components/alert'
 import Container from '../../_components/container'
 import Header from '../../_components/header'
@@ -17,27 +17,31 @@ type Params = {
 }
 
 export default async function Post({ params }: Params) {
+  // import markdownToHtml from '@/lib/blog/markdownToHtml'
+  // const content = await markdownToHtml(post.content || '')
   const post = getPostBySlug(params.slug)
 
   if (!post) {
     return notFound()
   }
 
-  // const content = await markdownToHtml(post.content || '')
   const words = getPostWords(post.content)
   const readTime = readingTime(words)
+  const meta = {
+    title: post.title,
+    coverImage: post.coverImage,
+    date: post.date,
+    author: post.author,
+    words: words,
+    readTime: readTime,
+  }
   return (
     <main>
       <Alert preview={post.preview} />
       <Container>
         <Header />
         <article className="mb-32">
-          <div className="flex">
-            <p className="mt-2 text-[13px] text-gray-700 dark:text-gray-300">字数：{words}</p>
-            <p className="mt-2 text-[13px] text-gray-700 dark:text-gray-300">预计阅读时间：{readTime}分钟</p>
-          </div>
-          <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} />
-
+          <PostHeader {...meta} />
           <PostBody content={post.content} />
         </article>
       </Container>

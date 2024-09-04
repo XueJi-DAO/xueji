@@ -16,9 +16,17 @@ const Counter = () => {
       <h1>
         Count: <span>{count}</span>
       </h1>
-      <button onClick={increment}>+1</button>
-      <button onClick={decrement}>-1</button>
-      <button onClick={reset}>Reset</button>
+      <div className="flex">
+        <button onClick={increment} className="mr-4 w-[80px]">
+          +1
+        </button>
+        <button onClick={decrement} className="mr-4 w-[80px]">
+          -1
+        </button>
+        <button onClick={reset} className="mr-4 w-[80px]">
+          Reset
+        </button>
+      </div>
     </div>
   )
 }

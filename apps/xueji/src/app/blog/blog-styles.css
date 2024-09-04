@@ -1,3 +1,13 @@
+.o-blog-title {
+  view-transition-name: blog-title;
+  width: fit-content;
+}
+
+.o-post-title {
+  view-transition-name: post-title;
+  width: fit-content;
+}
+
 .markdown {
   @apply text-lg leading-relaxed;
 

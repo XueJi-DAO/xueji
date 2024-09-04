@@ -1,12 +1,15 @@
+import './blog-styles.css'
+
 import { ViewTransitions } from 'next-view-transitions'
 import Footer from './_components/footer'
 import { CMS_NAME, HOME_OG_IMAGE_URL } from '@/lib/constants'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
-// import { sans } from '@/lib/blog/fonts'
+// import { sans } from '@/lib/fonts'
 
 import { ThemeSwitcher } from './_components/theme-switcher'
+import LocaleSwitcher from '@/components/LocaleSwitcher'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,6 +30,8 @@ export default function RootLayout({
     <ViewTransitions>
       <main className={cn(inter.className, 'dark:bg-slate-900 dark:text-slate-400')}>
         <ThemeSwitcher />
+
+        <LocaleSwitcher />
         <div className="">{children}</div>
         <Footer />
       </main>

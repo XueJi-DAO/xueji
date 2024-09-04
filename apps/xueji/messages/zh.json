@@ -24,6 +24,14 @@
     "title": "欢迎回来"
   },
   "AboutPage": {
-    "title": "关于"
+    "title": "关于",
+    "message": "{name}，你好! (e.g. '{name'})",
+    "followers": "你{count, plural, =0 {还没有} =1 {有一个} other {有 # } }关注者。",
+    "birthday": "这是{gender, select, female {她} male {他} other {他们}} {year, selectordinal, one {#st} two {#nd} few {#rd} other {#th}} birthday!",
+    "guidelines": "Please refer to <guidelines>the guidelines</guidelines>. Go to <profile>my blog</profile>",
+    "ordered": "下单日期 {orderDate, date, medium} {orderDate, date, ::yyyyMMddmmss}"
+  },
+  "blog": {
+    "title": "博客"
   }
 }

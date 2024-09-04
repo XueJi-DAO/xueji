@@ -1,11 +1,11 @@
-import './markdown-styles.css'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import rehypePrettyCode from 'rehype-pretty-code'
 import CustomLink from './CustomLink'
+import Greeting from './Greeting'
 import { cn } from '@/lib/utils'
-import { sans } from '@/lib/blog/fonts'
+import { sans } from '@/lib/fonts'
 import { Typography } from '@mui/material'
 import Counter from '@/components/Counter'
 type Props = {
@@ -14,7 +14,7 @@ type Props = {
 
 export async function PostBody({ content }: Props) {
   const components = {
-    a: CustomLink,
+    a: CustomLink, // 客户端组件
     h1: (props) => (
       <h1 {...props} className="text-2xl">
         {props.children}
@@ -23,8 +23,9 @@ export async function PostBody({ content }: Props) {
     h2: (props) => <Typography variant="h2" {...props} />,
     TestComponent: (await import('./TestComponent')).default,
     Counter: () => <Counter />,
+    Greeting: (props) => <Greeting {...props} />,
   }
-  console.log(content)
+
   return (
     <div className="mx-auto max-w-4xl">
       {/* <MDXRemote

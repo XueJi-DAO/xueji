@@ -44,6 +44,7 @@
     "@lexical/react": "^0.17.1",
     "@lexical/utils": "^0.17.1",
     "@lexical/yjs": "^0.17.1",
+    "@mui/icons-material": "^6.0.2",
     "@mui/material": "^5.16.7",
     "@prisma/client": "^5.18.0",
     "@react-three/drei": "^9.111.2",

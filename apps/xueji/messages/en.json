@@ -24,6 +24,14 @@
     "title": "Welcome back"
   },
   "AboutPage": {
-    "title": "About"
+    "title": "About",
+    "message": "Hello {name}!",
+    "followers": "You have {count, plural, =0 {no followers yet} =1 {one follower} other {# followers}}.",
+    "birthday": "It's {gender, select, female {Her} male {His} other {They}} {year, selectordinal, one {#st} two {#nd} few {#rd} other {#th}} birthday!",
+    "guidelines": "Please refer to <guidelines>the guidelines</guidelines>. Go to <profile>my blog</profile>",
+    "ordered": "Ordered on {orderDate, date, medium}"
+  },
+  "blog": {
+    "title": "Blog."
   }
 }

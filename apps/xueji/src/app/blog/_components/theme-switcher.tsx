@@ -73,7 +73,7 @@ const Switch = () => {
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, mode)
-    updateDOM()
+    updateDOM && updateDOM()
   }, [mode])
 
   /** toggle mode */

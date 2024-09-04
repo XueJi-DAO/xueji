@@ -6,19 +6,21 @@ export default function LocaleSwitcher() {
   const locale = useLocale()
 
   return (
-    <LocaleSwitcherSelect
-      defaultValue={locale}
-      items={[
-        {
-          value: 'en',
-          label: t('en'),
-        },
-        {
-          value: 'zh',
-          label: t('zh'),
-        },
-      ]}
-      label={t('label')}
-    />
+    <div className="absolute right-[80px] top-8">
+      <LocaleSwitcherSelect
+        defaultValue={locale}
+        items={[
+          {
+            value: 'en',
+            label: t('en'),
+          },
+          {
+            value: 'zh',
+            label: t('zh'),
+          },
+        ]}
+        label={t('label')}
+      />
+    </div>
   )
 }

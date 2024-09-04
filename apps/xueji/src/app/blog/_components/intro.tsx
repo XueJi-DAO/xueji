@@ -1,10 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 export function Intro() {
+  const t = useTranslations('blog')
   return (
     <section className="flex flex-col items-center py-16 md:mb-12 md:flex-row md:justify-between">
-      <h1 className="o-blog-title text-5xl font-bold leading-tight tracking-tighter md:pr-8 md:text-8xl">🗺️Blog.</h1>
+      <h1 className="o-blog-title text-5xl font-bold leading-tight tracking-tighter md:pr-8 md:text-8xl">
+        🗺️{t('title')}
+      </h1>
       <h2 className="mt-5 text-center text-lg md:pl-8 md:text-left">
         <span className="relative top-[4px] italic">
           By

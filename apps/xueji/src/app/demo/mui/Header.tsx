@@ -69,11 +69,11 @@ export default function Header() {
               示例
             </Link>
           </li>
-          <li className={styles.navItem}>
+          {/* <li className={styles.navItem}>
             <ActiveLink activeClassName="active" className="nav-link" href="/demo/tailwindcss">
               tailwindcss示例
             </ActiveLink>
-          </li>
+          </li> */}
           <li className={styles.navItem}>
             <Link prefetch={false} href="/demo/wasm">
               Webassembly
@@ -91,7 +91,7 @@ export default function Header() {
           </li>
           <li className={styles.navItem}>
             <Link prefetch={false} href="/demo/tailwindcss">
-              样式
+              tailwindcss
             </Link>
           </li>
           <li className={styles.navItem}>
@@ -152,6 +152,11 @@ export default function Header() {
           <li className={styles.navItem}>
             <Link prefetch={false} href="/demo/lexical">
               编辑器
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link prefetch={false} href="/blog">
+              博客
             </Link>
           </li>
         </ul>

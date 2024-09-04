@@ -1,18 +1,15 @@
 // 全局样式
 import './globals.css'
+
 // 模块化导入 import styles from './style.module.scss'
 import type { Viewport } from 'next'
 import type { ReactNode } from 'react'
-import { Inter } from 'next/font/google'
+import { inter } from '@/lib/fonts'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getMessages } from 'next-intl/server'
 import { Providers } from './providers'
 import { SessionProvider } from 'next-auth/react'
 import { auth } from '../lib/auth'
-
-const inter = Inter({
-  subsets: ['latin'],
-})
 
 // Config-based Metadata
 export const metadata = {
@@ -45,7 +42,7 @@ export default async function RootLayout({ children }: Props) {
     }
   }
   return (
-    <html lang={locale == 'en' ? 'en' : 'zh-Hans-CN'}>
+    <html lang={locale == 'en' ? 'en' : 'zh-Hans-CN'} className={inter.variable}>
       <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
@@ -58,7 +55,7 @@ export default async function RootLayout({ children }: Props) {
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={inter.className}>
+      <body>
         {/* 服务端组件不支持 Provider, 使用客户端组件封装一下 */}
         <SessionProvider session={session}>
           <NextIntlClientProvider messages={messages}>

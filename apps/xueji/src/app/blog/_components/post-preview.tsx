@@ -25,7 +25,7 @@ export function PostPreview({ title, coverImage, date, excerpt, author, slug }: 
           {title}
         </Link>
       </h3>
-      <div className="mb-4 text-lg">
+      <div className="mb-4 text-lg text-gray-500">
         <DateFormatter dateString={date} />
       </div>
       <p className="mb-4 text-pretty text-lg leading-relaxed">{excerpt}</p>
